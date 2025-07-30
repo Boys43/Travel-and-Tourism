@@ -1,0 +1,150 @@
+/* 🌐 4K & Ultra-Wide Screens */
+@media screen and (min-width: 1921px) {
+  html {
+    font-size: 20px !important;
+  }
+  h1 {
+    font-size: 3.2rem !important;
+  }
+  h2 {
+    font-size: 2.6rem !important;
+  }
+  p {
+    font-size: 1.2rem !important;
+  }
+  #hero {
+    height: 50vh !important;
+  }
+}
+
+/* 🖥️ Standard Desktop */
+@media screen and (max-width: 1920px) {
+  html {
+    font-size: 16px !important;
+  }
+  h1 {
+    font-size: 2.8rem !important;
+  }
+  h2 {
+    font-size: 2.2rem !important;
+  }
+  p {
+    font-size: 1.1rem !important;
+  }
+  #hero {
+    height: 100vh !important;
+  }
+}
+
+/* 💻 Small Laptops / Large Tablets */
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 14px !important;
+  }
+  h1 {
+    font-size: 2.4rem !important;
+  }
+  h2 {
+    font-size: 2rem !important;
+  }
+  p {
+    font-size: 1rem !important;
+  }
+  #hero {
+    height: 50vh !important;
+  }
+}
+
+/* 📱 Tablets */
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 12px !important;
+  }
+  h1 {
+    font-size: 2rem !important;
+  }
+  h2 {
+    font-size: 1.7rem !important;
+  }
+  p {
+    font-size: 0.95rem !important;
+  }
+  #hero {
+    height: 70vh !important;
+  }
+  #tagline {
+    max-width: 100% !important;
+  }
+  #main-content {
+    text-align: center;
+  }
+}
+
+/* 📲 Large Phones */
+@media screen and (max-width: 576px) {
+  html {
+    font-size: 10px !important;
+  }
+  h1 {
+    font-size: 1.8rem !important;
+  }
+  h2 {
+    font-size: 1.5rem !important;
+  }
+  p {
+    font-size: 0.9rem !important;
+  }
+  #hero {
+    height: 55vh !important;
+  }
+  #tagline {
+    max-width: 100% !important;
+  }
+  #main-content {
+    text-align: center;
+  }
+}
+
+/* 📳 Small Phones */
+@media screen and (max-width: 375px) {
+  html {
+    font-size: 8px !important;
+  }
+  h1 {
+    font-size: 1.6rem !important;
+  }
+  h2 {
+    font-size: 1.3rem !important;
+  }
+  p {
+    font-size: 0.5rem !important;
+  }
+  #hero {
+    height: 40vh !important;
+  }
+  #tagline {
+    max-width: 100% !important;
+  }
+  #main-content {
+    text-align: center;
+  }
+}
+
+
+@media (max-width: 1024px) {
+  #Gallery-wrapper {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 768px) {
+  #Gallery-wrapper {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  #Gallery-wrapper {
+    column-count: 1;
+  }
+}

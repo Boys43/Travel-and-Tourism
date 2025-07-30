@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photo Gallery</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/media_queries.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/utility_classes.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Oswald:wght@400;700&display=swap"
+        onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Oswald:wght@400;700&display=swap" />
+    </noscript>
+    <style>
+        /* Gallery Page - photo-gallery */
+        #Gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        #gallery-hero {
+            width: 100%;
+            height: auto;
+            padding: 2rem 0;
+            background-image: linear-gradient(to right, rgb(0, 187, 255) , var(--primary-color)) ;
+        }
+
+        #gallery-hero>h1 {
+            color: white;
+        }
+
+        #gallery-hero>p {
+            max-width: 50%;
+            margin: auto;
+            text-align: center;
+            color: var(--secondary-color);
+            font-weight: 900;
+            margin-top: 1rem;
+        }
+
+        #Gallery-wrapper {
+            column-count: 5;
+            column-gap: 1rem;
+            padding: 2rem 2rem 0 2rem;
+        }
+
+        .gallery-item {
+            cursor: pointer;
+            position: relative;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            display: block;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item video {
+            width: 100%;
+            display: block;
+            height: auto;
+            pointer-events: none;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Img Title */
+
+        .img-title {
+            position: absolute;
+            bottom: 3%;
+            font-size: 1.3rem !important;
+            color: #fff;
+            background-color: var(--primary-color);
+            width: 100%;
+            text-align: center;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 5%;
+            right: 4%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+        }
+
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            z-index: 1001;
+            max-width: 90%;
+            width: 800px;
+            height: 90vh;
+            overflow-y: auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.2s ease;
+        }
+
+        .popup.hidden {
+            transform: scale(0.8);
+            opacity: 0;
+        }
+
+        .popup-content {
+            width: 100%;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .img-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 1000;
+            display: none;
+            backdrop-filter: blur(0.2rem);
+            transition: all 0.2s ease;
+        }
+
+        .img-overlay.active {
+            display: block;
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .popup-gallery {
+            display: flex;
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+            object-position: center center;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .popup-gallery img {
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            cursor: zoom-in;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .popup-img-title {
+            font-size: 1.5rem;
+            color: white;
+            background-color: var(--secondary-color);
+            padding: 0.5rem 2rem;
+            position: absolute;
+            border-radius: 0 0.5rem 0.5rem 0;
+            top: 5%;
+            left: -2%;
+        }
+
+        #load-more-gradient {
+            position: relative;
+            z-index: 99;
+            width: 100%;
+            bottom: 0;
+            background-image: linear-gradient(to bottom, transparent, white);
+            margin-top: -10rem;
+            display: flex;
+            padding-top: 15vh;
+            padding-bottom: 2rem;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="#">
+            <div id="logo-details">
+                <img src="images/logo.png" alt="Logo" id="logo" />
+                <h2 id="site-name">Travelify</h2>
+            </div>
+        </a>
+        <nav id="navigation">
+            <ul id="nav-wrapper">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="#">About us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="Gallery">
+            <div id="gallery-hero">
+                <h1 id="gallery-header" class="main-section-heading">Welcome to Our Photo Gallery</h1>
+                <p>We Capture Memories, Not Just Moments. Every photo is a story from the journeys we live and love.</p>
+            </div>
+            <div id="Gallery-wrapper"></div>
+            <div id="load-more-gradient">
+                <button id="load-more" style="display: none;">Load More</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div id="footer-wrapper">
+            <div id="footer-main">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div id="footer-bottom">
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Overlay -->
+    <div class="img-overlay"></div>
+
+    <!-- Popup -->
+    <div class="popup hidden">
+        <div class="popup-content">
+            <span class="close-btn"><img src="svg/cross.svg" alt="Close"></span>
+            <h3 class="popup-img-title"></h3>
+            <div id="popup-gallery" class="popup-gallery"></div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+    <script>
+        const imageUrls = [], imageNames = [];
+        const imageItems = [];
+        let currentIndex = 0;
+        const ITEMS_PER_BATCH = 15;
+
+        fetch("http://127.0.0.1:3000/gallery/")
+            .then(res => res.text())
+            .then(html => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+
+                const links = [...doc.querySelectorAll('a')].filter(link => {
+                    const href = link.getAttribute('href');
+                    return href && href.match(/\.(jpg|jpeg|png|webp|gif)$/i);
+                });
+
+                links.forEach(link => {
+                    let href = link.getAttribute('href').replace(/\\/g, '/');
+                    if (href.startsWith('/')) href = href.slice(1);
+                    const fullUrl = `http://127.0.0.1:3000/${href}`;
+
+                    const fileName = href.split('/').pop().split('.')[0];
+                    const readableName = fileName.replace(/[-_]/g, ' ')
+                        .split(' ')
+                        .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+                        .join(' ');
+
+                    imageItems.push({ url: fullUrl, name: readableName });
+                    imageUrls.push(fullUrl);
+                    imageNames.push(readableName);
+                });
+
+                renderNextBatch(); // Initial render
+                const loadMoreBtn = document.getElementById("load-more");
+                if (imageItems.length > ITEMS_PER_BATCH) {
+                    loadMoreBtn.style.display = "block";
+                    loadMoreBtn.addEventListener("click", renderNextBatch);
+                }
+
+                initializePopupModal();
+            });
+
+        function renderNextBatch() {
+            const galleryWrapper = document.getElementById("Gallery-wrapper");
+            const loadMoreBtn = document.getElementById("load-more");
+
+            for (let i = currentIndex; i < currentIndex + ITEMS_PER_BATCH && i < imageItems.length; i++) {
+                const item = imageItems[i];
+
+                const galleryItem = document.createElement("div");
+                galleryItem.className = "gallery-item";
+                galleryItem.innerHTML = `
+                <img src="${item.url}" alt="${item.name}" />
+                <h2 class="img-title">${item.name}</h2>`;
+                galleryWrapper.appendChild(galleryItem);
+            }
+
+            currentIndex += ITEMS_PER_BATCH;
+
+            if (currentIndex >= imageItems.length) {
+                loadMoreBtn.style.display = "none";
+                document.getElementById("load-more-gradient").style.display = "none";
+            }
+
+            initializePopupModal(); // Rebind popup events
+        }
+
+        function initializePopupModal() {
+            const cards = document.querySelectorAll(".gallery-item");
+            const popup = document.querySelector(".popup");
+            const closeBtn = popup?.querySelector(".close-btn");
+            const overlay = document.querySelector(".img-overlay");
+            const popupGallery = document.getElementById("popup-gallery");
+
+            if (!popup || !closeBtn || !popupGallery || !overlay) return;
+
+            cards.forEach(card => {
+                card.addEventListener("click", () => {
+                    const titleEl = card.querySelector(".img-title");
+                    if (!titleEl) return;
+                    const destination = titleEl.innerText.trim();
+                    popupGallery.innerHTML = '';
+
+                    imageUrls.forEach((url, index) => {
+                        const name = imageNames[index];
+                        if (name.toLowerCase().includes(destination.toLowerCase())) {
+                            const img = document.createElement("img");
+                            img.src = url;
+                            img.alt = name;
+                            popupGallery.appendChild(img);
+                            document.querySelectorAll(".popup-img-title").forEach(el => {
+                                el.textContent = name;
+                            })
+                        }
+                    });
+
+                    popup.classList.remove("hidden");
+                    overlay.classList.add("active");
+                });
+            });
+
+            const closePopup = () => {
+                popup.classList.add("hidden");
+                overlay.classList.remove("active");
+                popupGallery.innerHTML = '';
+            };
+
+            closeBtn.addEventListener("click", closePopup);
+            overlay.addEventListener("click", closePopup);
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1028,6 +1028,30 @@ footer {
   text-align: left !important;
 }
 
+#home-gallery-wrapper .main-section-heading span a {
+  color: var(--secondary-color);
+  font-size: 1.1rem;
+  position: relative;
+  padding: 0.3rem 0;
+}
+
+#home-gallery-wrapper .main-section-heading span a::after {
+  content: "";
+
+  position: absolute;
+  font-size: 1.1rem;
+  background-color: var(--primary-color);
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -5%;
+  transition: all 0.2s ease;
+}
+
+#home-gallery-wrapper .main-section-heading span a:hover::after {
+  width: 100%;
+}
+
 #home-gallery-wrapper .main-section-heading img {
   margin-top: 0.3rem;
   width: 3rem;
@@ -1059,12 +1083,10 @@ footer {
 }
 
 #gallery-items-wrapper .item-wrapper:hover {
-  /* width: 40%; */
   transform: scale(1.05);
 }
 
 #gallery-items-wrapper .item-wrapper img {
-  /* border-radius: 0.7rem; */
   height: 100%;
   width: 100%;
   object-fit: cover;

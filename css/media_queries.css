@@ -15,6 +15,10 @@
   #hero {
     height: 50vh !important;
   }
+
+  #hero #tagline {
+    font-size: 200%;
+  }
 }
 
 /* 🖥️ Standard Desktop */
@@ -34,6 +38,9 @@
   #hero {
     height: 100vh !important;
   }
+  #hero #tagline {
+    font-size: 100%;
+  }
 }
 
 /* 💻 Small Laptops / Large Tablets */
@@ -52,6 +59,12 @@
   }
   #hero {
     height: 50vh !important;
+  }
+  #hero #tagline {
+    font-size: 50%;
+  }
+  .testimonials-carousel {
+    height: 55vh !important;
   }
 }
 
@@ -78,6 +91,37 @@
   #main-content {
     text-align: center;
   }
+
+  /* section {
+    height: 40rem !important;
+  } */
+  #upcoming-tours {
+    height: auto !important;
+  }
+
+  #Services-wrapper {
+    flex-direction: column !important;
+    height: 50rem !important;
+  }
+
+  #Services-content,
+  #Services-items {
+    width: 100% !important;
+    height: 50rem !important;
+  }
+
+  #custom-tour-wrapper,h1{
+    width: 100% !important;
+    flex-direction: column;
+  }
+
+  .testimonials-carousel {
+    height: 45vh !important;
+  }
+
+  #top-destiny{
+    height: 15rem !important;
+  }
 }
 
 /* 📲 Large Phones */
@@ -91,6 +135,9 @@
   h2 {
     font-size: 1.5rem !important;
   }
+  h3 {
+    font-size: 1.2rem !important;
+  }
   p {
     font-size: 0.9rem !important;
   }
@@ -98,10 +145,23 @@
     height: 55vh !important;
   }
   #tagline {
-    max-width: 100% !important;
+    max-width: 50% !important;
   }
   #main-content {
     text-align: center;
+  }
+  /* section {
+    height: 35rem !important;
+  } */
+  #upcoming-tours {
+    height: auto !important;
+  }
+  #Services-wrapper {
+    flex-direction: column;
+  }
+
+  .testimonials-carousel {
+    height: 35vh !important;
   }
 }
 
@@ -123,13 +183,25 @@
     height: 40vh !important;
   }
   #tagline {
-    max-width: 100% !important;
+    max-width: 20% !important;
   }
   #main-content {
     text-align: center;
   }
-}
+  /* section {
+    height: 30rem !important;
+  } */
+  #upcoming-tours {
+    height: auto !important;
+  }
+  #Services-wrapper {
+    flex-direction: column;
+  }
 
+  .testimonials-carousel {
+    height: 30vh !important;
+  }
+}
 
 @media (max-width: 1024px) {
   #Gallery-wrapper {
@@ -146,5 +218,13 @@
 @media (max-width: 480px) {
   #Gallery-wrapper {
     column-count: 1;
+  }
+
+  #upcoming-tours {
+    height: auto !important;
+  }
+
+  #Services-wrapper {
+    flex-direction: column;
   }
 }

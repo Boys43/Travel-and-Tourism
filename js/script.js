@@ -6,15 +6,15 @@ images.forEach((lazyLoad) => {
 });
 
 // Sticky navbar
-window.addEventListener("scroll", function () {
-  const nav = document.getElementById("navigation");
+const nav = document.getElementById("navigation");
+
+window.addEventListener("scroll", () => {
   if (window.scrollY > 70) {
     nav.classList.add("sticky-nav");
   } else {
     nav.classList.remove("sticky-nav");
   }
 });
-
 // Load when reaches viewport
 
 const observer = new IntersectionObserver((entries) => {
@@ -56,7 +56,6 @@ const observer = new IntersectionObserver((entries) => {
           entry.target.innerHTML = 30;
         }, 700);
       }
-      
     }
   });
 });
@@ -68,6 +67,11 @@ document.querySelectorAll(".odometer").forEach((el) => {
 document.querySelectorAll(".fade-in-on-scroll").forEach((el) => {
   observer.observe(el);
 });
+
+document.querySelectorAll(".fade-in-from-right").forEach((el) => {
+  observer.observe(el);
+});
+
 document.querySelectorAll(".fade-in").forEach((el) => {
   observer.observe(el);
 });
@@ -112,3 +116,9 @@ overlay.onclick = () => {
   overlay.classList.remove("active");
   mapFrame.src = ""; // Clear map
 };
+
+// WhatsApp Model
+
+document.querySelector("#whatsapp-icon img").addEventListener("click", () => {
+  document.getElementById("whatsapp-main").classList.toggle("toggle-display");
+});

@@ -24,35 +24,6 @@ window.addEventListener("load", async () => {
   gsap.registerPlugin(ScrollTrigger);
   await imagesLoadedPromise();
 
-  // ✅ Initialize Locomotive Scroll
-  const scrollContainer = document.querySelector("[data-scroll-container]");
-
-  const locoScroll = new LocomotiveScroll({
-    el: scrollContainer,
-    smooth: true,
-  });
-
-  // ✅ Tell ScrollTrigger to use locomotive-scroll for scroll values
-  ScrollTrigger.scrollerProxy(scrollContainer, {
-    scrollTop(value) {
-      return arguments.length
-        ? locoScroll.scrollTo(value, 0, 0)
-        : locoScroll.scroll.instance.scroll.y;
-    },
-    getBoundingClientRect() {
-      return {
-        top: 0,
-        left: 0,
-        width: window.innerWidth,
-        height: window.innerHeight,
-      };
-    },
-    pinType: scrollContainer.style.transform ? "transform" : "fixed",
-  });
-
-  // ✅ Update ScrollTrigger when Locomotive updates
-  locoScroll.on("scroll", ScrollTrigger.update);
-
   // ✅ GSAP Timelines using ScrollTrigger
   const tl1 = gsap.timeline({
     scrollTrigger: {
@@ -61,7 +32,6 @@ window.addEventListener("load", async () => {
       end: "10% 50%",
       scrub: true,
       markers: false,
-      scroller: scrollContainer, // Important!
     },
   });
 
@@ -76,7 +46,6 @@ window.addEventListener("load", async () => {
       end: "10% 50%",
       scrub: true,
       markers: false,
-      scroller: scrollContainer,
     },
   });
 
@@ -91,15 +60,10 @@ window.addEventListener("load", async () => {
       end: "-30% 50%",
       scrub: true,
       markers: false,
-      scroller: scrollContainer,
     },
   });
 
   tl3.to("#item-3", {
     left: "30%",
   });
-
-  // ✅ Refresh everything after locomotive is ready
-  ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-  ScrollTrigger.refresh();
 });

@@ -16,6 +16,8 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/themes/odometer-theme-default.min.css" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/utility_classes.css" />
+  <!-- Using SwiperCSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
   <!-- ✅ Preload Google Fonts -->
   <link rel="preload" as="style"
@@ -25,7 +27,7 @@
     <link rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Oswald:wght@400;700&display=swap" />
   </noscript>
-  
+
   <!-- ✅ Preload Reey Regular -->
   <link rel="preload" as="font" href="https://db.onlinewebfonts.com/t/12ece9d4b11e224fbbd0b5ca246bb213.woff2"
     type="font/woff2" crossorigin="anonymous" />
@@ -35,7 +37,7 @@
 </head>
 
 <body>
-  <header class="header">
+  <header>
     <a href="#">
       <div id="logo-details">
         <img src="images/logo.png" alt="Logo" id="logo" />
@@ -45,15 +47,16 @@
 
     <nav id="navigation">
       <ul id="nav-wrapper">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Contact us</a></li>
-        <li><a href="#">About us</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact-us.html">Contact us</a></li>
+        <li><a href="about-us.html">About us</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
+    <!-- Hero -->
     <section id="hero">
       <div class="main-overlay"></div>
       <div id="main-content">
@@ -68,6 +71,7 @@
       </div>
     </section>
 
+    <!-- Streak -->
     <section id="streak">
       <h1 class="main-section-heading">Our Journey</h1>
       <div id="streak-wrapper" class="fade-in-on-scroll">
@@ -90,6 +94,7 @@
       </div>
     </section>
 
+    <!-- Services -->
     <section id="Services">
       <div id="Services-wrapper">
         <div id="Services-content">
@@ -122,6 +127,7 @@
       </div>
     </section>
 
+    <!-- Upcoming Tours -->
     <section id="upcoming-tours">
       <div class="main-overlay"></div>
       <h1 class="main-section-heading fade-in-on-scroll">
@@ -147,7 +153,7 @@
               <button>
                 Book Now
               </button>
-              <a href="#">View plan </a>
+              <a href="package.html?id=shangrila">View plan </a>
             </div>
           </div>
         </div>
@@ -338,9 +344,24 @@
       </div>
     </section>
 
+    <!-- Custom Tour -->
+    <section id="custom-tour">
+      <div id="custom-tour-wrapper">
+        <h1 class="main-section-heading">
+          <img src="svg/personal trip (2).svg" alt="Tour Icon">
+          Customize Your Dream Tour
+        </h1>
+        <!-- Optional additional content like a button or image -->
+        <div id="button-div">
+          <button>Start Planning</button>
+          <button>family Tour</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Top destination -->
     <section id="top-destiny">
       <div id="top-destiny-wrapper">
-
         <div id="top-destiny-content">
           <h1 class="main-section-heading">Top Destinations</h1>
           <p>A glimpse of moments captured across Pakistan</p>
@@ -368,7 +389,6 @@
     </section>
 
     <!-- About us -->
-
     <section id="about-us">
       <div id="about-us-wrapper">
 
@@ -378,21 +398,27 @@
           <div class="fade-in from-left">
             <div class="about-visuals ">
               <!-- <img src="icon1.png" alt="Icon 1" /> -->
-              <span class="odometer" id="exp">0</span> + Years of Excellence
+              <h3>
+                <span class="odometer" id="exp">0</span> + Years of Excellence
+              </h3>
             </div>
           </div>
 
           <div class="fade-in from-right">
             <div class="about-visuals ">
               <!-- <img src="icon2.png" alt="Icon 2" /> -->
-              <span class="odometer" id="happy">0</span> + Projects Delivered
+              <h3>
+                <span class="odometer" id="happy">0</span> + Projects Delivered
+              </h3>
             </div>
           </div>
 
           <div class="fade-in from-left">
             <div class="about-visuals ">
               <!-- <img src="icon3.png" alt="Icon 3" /> -->
-              <span class="odometer" id="destiny">0</span> + Satisfied clients
+              <h3>
+                <span class="odometer" id="destiny">0</span> + Satisfied clients
+              </h3>
             </div>
           </div>
 
@@ -419,13 +445,12 @@
       </div>
     </section>
 
-
     <!-- Gallery -->
     <section id="home-gallery">
       <div id="home-gallery-wrapper">
         <div id="gallery-content">
           <h1 class="main-section-heading fade-in-on-scroll">
-            Explore Our Journey <span id="gallery-link"><a href="#">/ View Gallery</a></span>
+            Explore Our Journey <span id="gallery-link"><a href="/photo-gallery.html">/ View Gallery</a></span>
           </h1>
           <p class="fade-in-on-scroll">
             A glimpse of moments captured across Pakistan — from scenic landscapes to unforgettable smiles, experience
@@ -467,9 +492,150 @@
       </div>
     </section>
 
+    <!-- Why Tour Pakistan -->
+    <section id="why-pak">
+      <div id="why-pak-wrapper">
+
+      </div>
+    </section>
+
+    <!-- News Letter -->
+    <section id="news-letter">
+      <div id="news-letter-wrapper">
+        <div id="news-letter-content">
+          <h1 class="main-section-heading">Subscribe to our <span>News Letter</span></h1>
+        </div>
+
+        <div id="news-letter-form">
+          <div class="login-box fade-in-from-right">
+            <form action="https://formsubmit.co/nt50616849@gmail.com" method="POST">
+              <div class="user-box">
+                <input autocomplete="off" type="text" name="username" required="">
+                <label>Username</label>
+              </div>
+              <div class="user-box">
+                <input autocomplete="off" type="email" name="email" required="">
+                <label>Email</label>
+              </div>
+
+              <button type="submit">Submit</button>
+
+              <!-- Redirect after submit -->
+              <input type="hidden" name="_next" value="https://localhost:3000/thankyou.html">
+
+              <!-- Prevent bot spam -->
+              <input type="text" name="_honey" style="display:none">
+
+              <!-- Disable CAPTCHA -->
+              <input type="hidden" name="_captcha" value="false">
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="fade-in-on-scroll">
+      <h1 class="main-section-heading">Our testimonials</h1>
+      <div class="testimonials-carousel swiper">
+        <div class="swiper-wrapper">
+          <div class="review swiper-slide fade-in-on-scroll">
+            <img src="gallery/chitta-katha-lake.webp\" alt="p1">
+            <div class="review-details">
+              <div class="review-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Recusandae, accusantium? Officiis, eaque odio. Quis, maxime dicta numquam sapiente
+                laboriosam optio natus cupiditate quia ratione fugiat praesentium? Voluptate sunt
+                eius vitae!</div>
+              <div class="reviewer-name">Haider</div>
+              <div class="reviewer-place">Lahore</div>
+            </div>
+          </div>
+          <div class="review swiper-slide fade-in-on-scroll">
+            <img src="gallery/Beauty-of-Skardu.webp" alt="p2">
+            <div class="review-details">
+              <div class="review-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Recusandae, accusantium? Officiis, eaque odio. Quis, maxime dicta numquam sapiente
+                laboriosam optio natus cupiditate quia ratione fugiat praesentium? Voluptate sunt
+                eius vitae!</div>
+              <div class="reviewer-name">Usman</div>
+              <div class="reviewer-place">Lahore</div>
+            </div>
+          </div>
+          <div class="review swiper-slide fade-in-on-scroll">
+            <img src="gallery/banjosa.webp" alt="">
+            <div class="review-details">
+              <div class="review-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Recusandae, accusantium? Officiis, eaque odio. Quis, maxime dicta numquam sapiente
+                laboriosam optio natus cupiditate quia ratione fugiat praesentium? Voluptate sunt
+                eius vitae!</div>
+              <div class="reviewer-name">Ali</div>
+              <div class="reviewer-place">Lahore</div>
+            </div>
+          </div>
+          <div class="review swiper-slide fade-in-on-scroll">
+            <img src="gallery/hunza.webp" alt="">
+            <div class="review-details">
+              <div class="review-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Recusandae, accusantium? Officiis, eaque odio. Quis, maxime dicta numquam sapiente
+                laboriosam optio natus cupiditate quia ratione fugiat praesentium? Voluptate sunt
+                eius vitae!</div>
+              <div class="reviewer-name">Omar</div>
+              <div class="reviewer-place">Lahore</div>
+            </div>
+          </div>
+          <div class="review swiper-slide fade-in-on-scroll">
+            <img src="gallery/saif-ul-malook-2.webp" alt="">
+            <div class="review-details">
+              <div class="review-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Recusandae, accusantium? Officiis, eaque odio. Quis, maxime dicta numquam sapiente
+                laboriosam optio natus cupiditate quia ratione fugiat praesentium? Voluptate sunt
+                eius vitae!</div>
+              <div class="reviewer-name">Taha</div>
+              <div class="reviewer-place">Lahore</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div id="footer-wrapper">
+        <div id="footer-main">
+          <div>
+            <img src="images/logo.png" alt="Logo">
+            <h1 class="main-section-heading">
+              Travelify
+            </h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, delectus ex molestiae debitis
+              officia voluptatem iure impedit nemo, eius nisi doloribus tempora! Odit.
+            </p>
+          </div>
+          <div>
+            <h2>Our Pages</h2>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="packages.html">Packages</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="about-us.html">About us</a></li>
+              <li><a href="photo-gallery.html">Gallery</a></li>
+              <li><a href="contact-us.html">Contact us</a></li>
+            </ul>
+          </div>
+          <div></div>
+          <div></div>
+        </div>
+        <div id="copyright">
+          <p>Copyright &copy; | All rights are reserved </p>
+          <a href="privacy-policy.html">Privacy Policy</a>
+        </div>
+      </div>
+    </footer>
+
   </main>
 
-  <div class="spacer"></div>
 
   <!-- Modal Popup -->
   <div id="tour-popup" class="popup hidden">
@@ -481,9 +647,36 @@
     </div>
   </div>
 
+  <!-- WhatsApp Button -->
+  <div id="whatsapp-model">
+    <div id="whatsapp-main">
+      <div id="whatsapp-contact" class="fade-in-on-scroll">
+        <img src="images/image.png" alt="">
+        <div id="whatsapp-content">
+          <p>
+            Travelify
+          </p>
+          <p>
+            Nouman Tariq (Owner)
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id="whatsapp-icon"><img src="images/image.png" alt=""></div>
+    <div id="up">
+      <img src="svg/up.svg" alt="up">
+    </div>
+  </div>
+
 
   <!-- Odemeter -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/odometer.min.js" defer></script>
+
+  <!-- Using SwiperJs  -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Linking custom Swiper jS -->
+  <script src="js/swiper.js"></script>
 
   <script src="js/script.js"></script>
   <!-- Gsap Cdn for scroll motion -->

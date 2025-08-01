@@ -1,25 +1,22 @@
 const swiper1 = new Swiper(".testimonials-carousel", {
-    freeMode: true,
-    grabCursor: true,
-    speed: 3000,
-    loop: true,
-    breakpoints: {
-        0: {
-            slidesPerView: 1
-        },
-        768: {
-            slidesPerView: 2
-        },
-        1024: {
-            slidesPerView: 3
-        },
-    }
+  freeMode: true,
+  grabCursor: true,
+  speed: 2000,
+  loop: true,
+  autoplay: {
+    delay: 2000,
+    disableOnInteraction: false, // this allows autoplay to resume after interaction
+    pauseOnMouseEnter: true, // optional: pause when hovered
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 3,
+    },
+  },
 });
-
-
-// To auto move the swiper
-setTimeout(() => {
-    setInterval(() => {
-        swiper1.slideNext();
-    }, 5000);
-}, 3000);

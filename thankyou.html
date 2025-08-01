@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank You | Travelify</title>
+    <link rel="stylesheet" href="css/media_queries.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/utility_classes.css" />
+    <!-- ✅ Preload Google Fonts -->
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Oswald:wght@400;700&display=swap"
+        onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Oswald:wght@400;700&display=swap" />
+    </noscript>
+    <style>
+        :root {
+            --primary-blue: #0076b5;
+            --accent-gold: #ffd700;
+            --white: #ffffff;
+            --gray-text: #555;
+            --font-base: 16px;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--white);
+            color: var(--gray-text);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .thank-you-container {
+            max-width: 40rem;
+            background-color: #f9f9f9;
+            padding: 2.5rem;
+            border-radius: 1.25rem;
+            text-align: center;
+            box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.1);
+            border-top: 0.5rem solid var(--primary-blue);
+        }
+
+        .thank-you-icon img {
+            width: 4rem;
+        }
+
+        h1 {
+            color: var(--primary-blue);
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        p {
+            font-size: 1rem;
+            color: var(--gray-text);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 600px) {
+            html {
+                font-size: 90%;
+                /* 1rem = 14.4px */
+            }
+
+            .thank-you-container {
+                padding: 2rem 1.5rem;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            .thank-you-icon {
+                font-size: 3rem;
+            }
+
+            .btn-home {
+                padding: 0.65rem 1.2rem;
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="thank-you-container fade-in-on-scroll">
+        <div class="thank-you-icon"><img src="images/logo.png" alt=""></div>
+        <h1>Thank You for Reaching Out!</h1>
+        <p>
+            We’ve received your message and our travel experts will get back to you shortly.<br />
+            Your next adventure is just around the corner!
+        </p>
+        <button onclick="window.location.href = 'http://127.0.0.1:3000/index.html'">Back to Home</button>
+
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services | Travelify</title>
+
+    <!-- Adding media queries css styling sheet -->
+    <link rel="stylesheet" href="css/media_queries.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/utility_classes.css" />
+
+    <!-- ✅ Preload Google Fonts -->
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Oswald:wght@400;700&display=swap"
+        onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Oswald:wght@400;700&display=swap" />
+    </noscript>
+
+    <!-- ✅ Preload Reey Regular -->
+    <link rel="preload" as="font" href="https://db.onlinewebfonts.com/t/12ece9d4b11e224fbbd0b5ca246bb213.woff2"
+        type="font/woff2" crossorigin="anonymous" />
+
+    <!-- ✅ Reey Stylesheet -->
+    <link href="https://db.onlinewebfonts.com/c/12ece9d4b11e224fbbd0b5ca246bb213?family=Reey+Regular"
+        rel="stylesheet" />
+
+    <style>
+        #hero {
+            background-image: url("images/services-bg.jpg");
+        }
+
+        #core-services {
+            margin-top: 3rem;
+            width: 100%;
+            height: 60vh;
+        }
+
+        #core-services-wrapper {
+            width: 90%;
+            height: 100%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        #core-services-wrapper .main-section-heading {
+            padding: 0 2rem;
+        }
+
+        #services-grid {
+            width: 50%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        #services-grid>div {
+            position: relative;
+            color: var(--text-muted);
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            height: 6rem;
+            text-align: center;
+            padding: 0 3rem;
+            background-color: white;
+            cursor: pointer;
+            gap: 0.9rem;
+            border-radius: 0.5rem;
+        }
+
+        #services-grid>div::after,
+        #services-grid>div::before {
+            content: "";
+
+            position: absolute;
+            border: none;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) !important;
+            height: 100%;
+            width: 100%;
+            background-image: conic-gradient(from var(--angle),
+                    transparent,
+                    var(--secondary-color));
+            border-radius: 0.7rem;
+            z-index: -4;
+            animation: rotate 3s linear infinite;
+        }
+
+        #services-grid>div::before {
+            opacity: 0.7;
+            transition: all 0.5s ease;
+        }
+
+        #services-grid>div:hover::after,
+        #services-grid>div:hover::before {
+            filter: blur(1rem);
+        }
+
+        #services-grid>div img {
+            width: 2rem;
+        }
+
+        #services-grid>div p {
+            font-size: 0.8rem !important;
+            color: var(--text-muted);
+        }
+
+        #experiences {
+            height: 60vh;
+            width: 100%;
+            margin-top: 3rem;
+        }
+
+        #experiences-wrapper {
+            width: 90%;
+            height: 100%;
+            display: flex;
+            margin: auto;
+            flex-direction: column;
+        }
+
+        #experiences-section {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        #experiences-section>div {
+            width: 30%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 2rem;
+            gap: 0.5rem;
+            box-shadow: 0.2rem 0.2rem 1rem rgba(128, 128, 128, 0.291);
+            border-radius: 1rem;
+            margin-top: 1rem;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        #experiences-section>div:hover {
+            box-shadow: 0.4rem 0.4rem 1.5rem rgba(128, 128, 128, 0.503);
+            transform: translateY(-0.5rem) !important;
+        }
+
+        #experiences-section>div h3 {
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 3px;
+            cursor: pointer;
+            margin-bottom: 0.2rem;
+        }
+
+        #experiences-section>div h3::after {
+            content: "";
+            position: absolute;
+
+            bottom: -5%;
+            width: 0%;
+            height: 2px;
+            background-color: var(--primary-color);
+            left: 0;
+            transition: all 0.3s ease;
+        }
+
+        #experiences-section>div h3:hover::after {
+            width: 100%;
+        }
+
+        #experiences-section>div img {
+            width: 3rem;
+        }
+
+        #experiences-section>div p {
+            font-size: 0.9rem !important;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        #experiences-section>div button {
+            margin-top: 1rem;
+        }
+
+        /* Booking */
+
+        #booking {
+            margin-top: 7rem;
+            display: flex;
+            width: 100%;
+            height: 60vh;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        #booking>div:nth-child(1) {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            height: 60%;
+            padding: 0 3rem;
+        }
+
+        #booking>div:nth-child(1)>p {
+            text-align: center;
+            color: var(--text-muted);
+
+            font-size: 0.9rem !important;
+        }
+
+        #booking #booking-wrapper {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-left: 3rem;
+            position: relative;
+            gap: 1rem;
+        }
+
+        #booking #booking-wrapper img {
+            position: absolute;
+
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            z-index: -5;
+        }
+
+        .booking-item>div {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            align-items: center;
+            border-radius: 0.5rem;
+            background-color: white;
+            width: 10rem;
+            height: 4rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .booking-item>div::after,
+        .booking-item>div::before {
+            content: "";
+
+            position: absolute;
+            border: none;
+            top: 50%;
+            padding: 3px;
+            left: 50%;
+            transform: translate(-50%, -50%) !important;
+            height: 100%;
+            width: 100%;
+            background-image: conic-gradient(from var(--angle),
+                    transparent,
+                    var(--secondary-color));
+            border-radius: 0.7rem;
+            z-index: -4;
+            animation: rotate 3s linear infinite;
+        }
+
+        .booking-item>div::before {
+            opacity: 0.7;
+            filter: blur(1rem);
+            transition: all 0.5s ease;
+        }
+
+        /* Featured Pages */
+        #featured-pages {
+            height: 60vh;
+            width: 100%;
+            margin-top: 3rem;
+        }
+
+        #featured-pages-wrapper {
+            width: 90%;
+            height: 80%;
+            margin: auto;
+            display: flex;
+            padding: 0 2rem;
+            gap: 2rem;
+            justify-content: space-evenly;
+        }
+
+        #featured-pages-wrapper .pages {
+            width: 100%;
+            height: 100%;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: 2;
+            position: relative;
+            box-shadow: 0.2rem 0.2rem 0.5rem rgba(128, 128, 128, 0.524);
+            border-radius: 0.5rem;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pages img {
+            width: 3rem;
+        }
+
+        .pages::after {
+            content: "";
+
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.35);
+            z-index: -1;
+            opacity: 0;
+            backdrop-filter: blur(0.1rem);
+            transition: all 0.3s ease;
+        }
+
+        .pages:hover::after {
+            opacity: 1;
+        }
+
+        .pages#page-1 {
+            background-image: url("/images/packages-bg.jpg");
+        }
+
+        .pages#page-2 {
+            background-image: url("/images/gallery-bg.jpg");
+        }
+
+        .pages#page-3 {
+            background-image: url("/images/contactus-bg.jpg");
+        }
+
+        .pages h3 {
+            position: absolute;
+
+            top: 5%;
+            left: 0%;
+            width: 70%;
+            padding: 0.5rem 2rem;
+            font-size: 1.3rem;
+            text-align: center;
+            background-color: gold;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .pages button {
+            opacity: 0;
+            width: 40%;
+            margin-top: 2rem;
+            transform: translateY(1rem);
+        }
+
+        .pages:hover button {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .pages:hover h3 {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <a href="#">
+            <div id="logo-details">
+                <img src="images/logo.png" alt="Logo" id="logo" />
+                <h2 id="site-name">Travelify</h2>
+            </div>
+        </a>
+
+        <nav id="navigation">
+            <ul id="nav-wrapper">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="#">About us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main -->
+    <main>
+        <!-- Services Hero -->
+        <section id="hero">
+            <div class="main-overlay"></div>
+            <div id="main-content">
+                <h1 id="tagline" class="fade-in-on-scroll">
+                    Where Your<span class="fade-in-on-scroll">Travel Dreams</span> Meet
+                    Our Expertise
+                </h1>
+                <div id="button-div">
+                    <button class="book-now">Book Now</button>
+                    <button class="tours">Tours</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="core-services">
+            <div id="core-services-wrapper">
+                <h1 class="main-section-heading">We Facilitate our Customers</h1>
+                <div id="services-grid">
+                    <div>
+                        <img src="svg/bag.svg" alt="" />
+                        <h3>Tour Packages</h3>
+                    </div>
+                    <div>
+                        <img src="svg/book.svg" alt="" />
+                        <h3>Hotel Booking</h3>
+                    </div>
+                    <div>
+                        <img src="svg/flights (2).svg" alt="" />
+                        <h3>Flights</h3>
+                    </div>
+                    <div>
+                        <img src="svg/visa.svg" alt="" />
+                        <h3>Visa Help</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experiences">
+            <div id="experiences-wrapper">
+                <h1 class="main-section-heading fade-in-on-scroll">
+                    With Years of Industry Expertise
+                </h1>
+                <div id="experiences-section">
+                    <div class="fade-in-on-scroll">
+                        <img src="svg/adventure.svg" alt="adventure" />
+                        <h3>Adventure Trips</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab!
+                        </p>
+                        <button>View Packages</button>
+                    </div>
+                    <div class="fade-in-on-scroll">
+                        <img src="svg/moon.svg" alt="moon" />
+                        <h3>Honeymoons</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab!
+                        </p>
+                        <button>View Packages</button>
+                    </div>
+                    <div class="fade-in-on-scroll">
+                        <img src="svg/islam.svg" alt="islam" />
+                        <h3>Religious Tours</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab!
+                        </p>
+                        <button>Book Tours</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="booking">
+            <div>
+                <h1 class="main-section-heading">How it Works?</h1>
+                <p>Booking your dream trip is simple! Just choose your preferred travel package, customize it to fit
+                    your needs, confirm your details, and make a quick payment. Once done, sit back and relax—we’ll
+                    handle the rest while you get ready for an unforgettable journey!</p>
+            </div>
+            <div id="booking-wrapper">
+                <img src="images/Background Design Vector Png.png" alt="design" />
+                <div class="booking-item fade-in from-right">
+                    <div class="">1. Choose</div>
+                </div>
+                <div class="booking-item fade-in from-left">
+                    <div>2. Customize</div>
+                </div>
+                <div class="booking-item fade-in from-right">
+                    <div>3. Pay</div>
+                </div>
+                <div class="booking-item fade-in from-left">
+                    <div>4. Travel</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="featured-pages">
+            <h1 class="main-section-heading">
+                Featured Pages
+            </h1>
+            <div id="featured-pages-wrapper">
+                <div class="pages" id="page-1">
+                    <h3>Our Packages</h3>
+                    <button onclick="window.location.href = 'http://localhost:3000/packages.html'">
+                        Visit
+                    </button>
+                </div>
+                <div class="pages" id="page-2">
+                    <h3>Our Fetured Gallery</h3>
+                    <button onclick="window.location.href = 'http://localhost:3000/photo-gallery.html'">
+                        Visit
+                    </button>
+                </div>
+                <div class="pages" id="page-3">
+                    <h3>About Us</h3>
+                    <button onclick="window.location.href = 'http://localhost:3000/about-us.html'">
+                        Visit
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Letter -->
+        <section id="news-letter">
+            <div id="news-letter-wrapper">
+                <div id="news-letter-content">
+                    <h1 class="main-section-heading">Subscribe to our <span>News Letter</span></h1>
+                </div>
+
+                <div id="news-letter-form">
+                    <div class="login-box fade-in-from-right">
+                        <form action="https://formsubmit.co/nt50616849@gmail.com" method="POST">
+                            <div class="user-box">
+                                <input autocomplete="off" type="text" name="username" required="">
+                                <label>Username</label>
+                            </div>
+                            <div class="user-box">
+                                <input autocomplete="off" type="email" name="email" required="">
+                                <label>Email</label>
+                            </div>
+
+                            <button type="submit">Submit</button>
+
+                            <!-- Redirect after submit -->
+                            <input type="hidden" name="_next" value="https://localhost:3000/thankyou.html">
+
+                            <!-- Prevent bot spam -->
+                            <input type="text" name="_honey" style="display:none">
+
+                            <!-- Disable CAPTCHA -->
+                            <input type="hidden" name="_captcha" value="false">
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Script jS -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

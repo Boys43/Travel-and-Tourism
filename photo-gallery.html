@@ -19,33 +19,26 @@
         <link rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Oswald:wght@400;700&display=swap" />
     </noscript>
+
+    <link rel="preload" as="font" href="https://db.onlinewebfonts.com/t/12ece9d4b11e224fbbd0b5ca246bb213.woff2"
+        type="font/woff2" crossorigin="anonymous" />
+
+    <!-- ✅ Reey Stylesheet -->
+    <link href="https://db.onlinewebfonts.com/c/12ece9d4b11e224fbbd0b5ca246bb213?family=Reey+Regular"
+        rel="stylesheet" />
     <style>
         /* Gallery Page - photo-gallery */
+
+        #hero {
+            background-image: url("images/gallery-bg.jpg");
+        }
+
         #Gallery {
             display: flex;
             flex-direction: column;
             align-items: center;
             width: 100%;
-        }
-
-        #gallery-hero {
-            width: 100%;
-            height: auto;
-            padding: 2rem 0;
-            background-image: linear-gradient(to right, rgb(0, 187, 255) , var(--primary-color)) ;
-        }
-
-        #gallery-hero>h1 {
-            color: white;
-        }
-
-        #gallery-hero>p {
-            max-width: 50%;
-            margin: auto;
-            text-align: center;
-            color: var(--secondary-color);
-            font-weight: 900;
-            margin-top: 1rem;
+            margin: 3rem 0;
         }
 
         #Gallery-wrapper {
@@ -218,11 +211,22 @@
     </header>
 
     <main>
-        <section id="Gallery">
-            <div id="gallery-hero">
-                <h1 id="gallery-header" class="main-section-heading">Welcome to Our Photo Gallery</h1>
-                <p>We Capture Memories, Not Just Moments. Every photo is a story from the journeys we live and love.</p>
+        <!-- Gallery Hero -->
+        <section id="hero">
+            <div class="main-overlay"></div>
+            <div id="main-content">
+                <h1 id="tagline" class="fade-in-on-scroll">
+                    Explore the <span class="fade-in-on-scroll">Beauty</span> of Our Journey
+                </h1>
+                <div id="button-div">
+                    <button class="book-now">Book Now</button>
+                    <button class="tours">Tours</button>
+                </div>
             </div>
+        </section>
+
+        <section id="Gallery">
+            <h1 id="gallery-header" class="main-section-heading">Welcome to Our Photo Gallery</h1>
             <div id="Gallery-wrapper"></div>
             <div id="load-more-gradient">
                 <button id="load-more" style="display: none;">Load More</button>

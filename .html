@@ -1,62 +1,118 @@
-<section id="testimonials" class="fade-in-on-scroll">
-    <h1 class="main-heading">Our testimonials</h1>
-    <div class="testimonials-carousel swiper">
-        <div class="swiper-wrapper">
-            <div class="review swiper-slide fade-in-on-scroll">
-                <img src="images/sample/profile1.jpeg" alt="p1">
-                <div class="review-details">
-                    <div class="review-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                        Recusandae, accusantium? Officiis, eaque odio. Quis, maxime dicta numquam sapiente
-                        laboriosam optio natus cupiditate quia ratione fugiat praesentium? Voluptate sunt
-                        eius vitae!</div>
-                    <div class="reviewer-name">Haider</div>
-                    <div class="reviewer-place">Lahore</div>
-                </div>
-            </div>
-            <div class="review swiper-slide fade-in-on-scroll">
-                <img src="images/sample/profile2.jpg" alt="p2">
-                <div class="review-details">
-                    <div class="review-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                        Recusandae, accusantium? Officiis, eaque odio. Quis, maxime dicta numquam sapiente
-                        laboriosam optio natus cupiditate quia ratione fugiat praesentium? Voluptate sunt
-                        eius vitae!</div>
-                    <div class="reviewer-name">Usman</div>
-                    <div class="reviewer-place">Lahore</div>
-                </div>
-            </div>
-            <div class="review swiper-slide fade-in-on-scroll">
-                <img src="images/sample/profile3.jpeg" alt="">
-                <div class="review-details">
-                    <div class="review-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                        Recusandae, accusantium? Officiis, eaque odio. Quis, maxime dicta numquam sapiente
-                        laboriosam optio natus cupiditate quia ratione fugiat praesentium? Voluptate sunt
-                        eius vitae!</div>
-                    <div class="reviewer-name">Ali</div>
-                    <div class="reviewer-place">Lahore</div>
-                </div>
-            </div>
-            <div class="review swiper-slide fade-in-on-scroll">
-                <img src="images/sample/profile3.jpeg" alt="">
-                <div class="review-details">
-                    <div class="review-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                        Recusandae, accusantium? Officiis, eaque odio. Quis, maxime dicta numquam sapiente
-                        laboriosam optio natus cupiditate quia ratione fugiat praesentium? Voluptate sunt
-                        eius vitae!</div>
-                    <div class="reviewer-name">Omar</div>
-                    <div class="reviewer-place">Lahore</div>
-                </div>
-            </div>
-            <div class="review swiper-slide fade-in-on-scroll">
-                <img src="images/sample/profile5.jpg" alt="">
-                <div class="review-details">
-                    <div class="review-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                        Recusandae, accusantium? Officiis, eaque odio. Quis, maxime dicta numquam sapiente
-                        laboriosam optio natus cupiditate quia ratione fugiat praesentium? Voluptate sunt
-                        eius vitae!</div>
-                    <div class="reviewer-name">Taha</div>
-                    <div class="reviewer-place">Lahore</div>
-                </div>
-            </div>
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Founder ID Card</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+    }
+
+    .id-card {
+      background-color: #ffffff;
+      width: 340px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      border: 3px solid #0077b6;
+    }
+
+    .id-header {
+      background-color: #0077b6;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+    }
+
+    .id-header h2 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    .id-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin: -60px auto 10px;
+      border: 5px solid white;
+      background-color: #ddd;
+      background-image: url('/images/founder.jpg');
+      /* Replace with actual photo */
+      background-size: cover;
+      background-position: center;
+    }
+
+    .id-body {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .id-body h3 {
+      margin: 10px 0 5px;
+      color: #333;
+    }
+
+    .id-body p {
+      margin: 4px 0;
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    .id-footer {
+      background-color: #f1f5f9;
+      padding: 12px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #0077b6;
+      font-weight: bold;
+    }
+
+    .contact-btn {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 10px 20px;
+      background-color: #0077b6;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .contact-btn:hover {
+      background-color: #005f90;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="id-card">
+    <div class="id-header">
+      <h2>Founder ID</h2>
     </div>
-</section>
+    <div class="id-photo"></div>
+    <div class="id-body">
+      <h3>Ahsan Mehmood</h3>
+      <p>Founder & Travel Designer</p>
+      <p>Nomad Trails Pvt. Ltd.</p>
+      <p>Since 2018</p>
+      <a href="#contact" class="contact-btn">Connect</a>
+    </div>
+    <div class="id-footer">
+      Inspiring Travel Every Day ✈️
+    </div>
+  </div>
+
+  
+
+</body>
+
+</html>

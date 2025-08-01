@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Adding media queries css styling sheet -->
+    <link rel="stylesheet" href="css/media_queries.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/themes/odometer-theme-default.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/utility_classes.css" />
+
+    <!-- ✅ Preload Google Fonts -->
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Oswald:wght@400;700&display=swap"
+        onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Oswald:wght@400;700&display=swap" />
+    </noscript>
+
+    <!-- ✅ Preload Reey Regular -->
+    <link rel="preload" as="font" href="https://db.onlinewebfonts.com/t/12ece9d4b11e224fbbd0b5ca246bb213.woff2"
+        type="font/woff2" crossorigin="anonymous" />
+
+    <!-- ✅ Reey Stylesheet -->
+    <link href="https://db.onlinewebfonts.com/c/12ece9d4b11e224fbbd0b5ca246bb213?family=Reey+Regular"
+        rel="stylesheet" />
+
+    <style>
+       
+
+        .main-section-heading{
+            color: white;
+            margin-top: 0 !important;
+            padding: 1rem 0;
+        }
+
+        #upcoming-tours {
+            margin-top: 0 !important;
+            background: var(--primary-color) !important;
+        }
+
+        .tour-cards {
+            box-shadow: 0.2rem 0.2rem 0.5rem grey;
+            transition: all 0.2s ease !important;
+        }
+
+        .tour-cards:hover {
+            transform: translateY(-1rem) !important;
+            box-shadow: 0.4rem 0.4rem 2rem grey;
+        }
+
+        #hero{
+            background-image: url("images/packages-bg.jpg");
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="#">
+            <div id="logo-details">
+                <img src="images/logo.png" alt="Logo" id="logo" />
+                <h2 id="site-name">Travelify</h2>
+            </div>
+        </a>
+
+        <nav id="navigation">
+            <ul id="nav-wrapper">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="#">About us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="main-overlay"></div>
+            <div id="main-content">
+                <h1 id="tagline" class="fade-in-on-scroll">
+                    Explore Our <span class="fade-in-on-scroll">Travel</span> Packages
+                </h1>
+            </div>
+        </section>
+        <section id="upcoming-tours">
+            <h1 class="main-section-heading fade-in-on-scroll">
+                Tour Packages
+            </h1>
+            <div id="upcoming-tours-wrapper">
+                <div class="tour-cards fade-in-on-scroll">
+                    <div class="offer">
+                        <img src="svg/limited.svg" alt="Limited"> Upcoming Tours
+                    </div>
+                    <div class="img-frame">
+                        <img src="gallery/arang-kel.webp" alt="tour" />
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <h2 class="destination">Arang Kel</h2>
+                            <div>
+                                <h2 class="price">Rs12,000</h2>
+                                <div class="stay">7 Days (6 nights)</div>
+                            </div>
+                        </div>
+                        <div>
+                            <button>
+                                Book Now
+                            </button>
+                            <a href="package.html?id=arang-kel">View plan </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tour-cards fade-in-on-scroll">
+                    <div class="offer">
+                        <img src="svg/limited.svg" alt="Limited"> Upcoming
+                    </div>
+                    <div class="img-frame">
+                        <img src="gallery/azad-kashmir.webp" alt="tour" />
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <h2 class="destination">Azad Kashmir</h2>
+                            <div>
+                                <h2 class="price">Rs22,000</h2>
+                                <div class="stay">8 Days (7 nights)</div>
+                            </div>
+                        </div>
+                        <div>
+                            <button>
+                                Book Now
+                            </button>
+                            <a href="package-layout.html?id=azad-kashmir">View plan </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tour-cards fade-in-on-scroll">
+                    <div class="offer">
+                        <img src="svg/limited.svg" alt="Limited"> Popular
+                    </div>
+                    <div class="img-frame">
+                        <img src="gallery/Badshahi mosque.jpg" alt="tour" />
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <h2 class="destination">Badshahi Masijid</h2>
+                            <div>
+                                <h2 class="price">Rs7,000</h2>
+                                <div class="stay">2 Days (1 Night)</div>
+                            </div>
+                        </div>
+                        <div>
+                            <button>
+                                Book Now
+                            </button>
+                            <a href="package-layout.html?id=badshahi-masjid">View plan </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tour-cards fade-in-on-scroll">
+                    <div class="offer">
+                        <img src="svg/limited.svg" alt="Limited">Popular
+                    </div>
+                    <div class="img-frame">
+                        <img src="gallery/banjosa.webp" alt="tour" />
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <h2 class="destination">Banjosa </h2>
+                            <div>
+                                <h2 class="price">Rs 10,000</h2>
+                                <div class="stay">7 Days (6 Nights)</div>
+                            </div>
+                        </div>
+                        <div>
+                            <button>
+                                Book Now
+                            </button>
+                            <a href="package-layout.html?id=banjosa">View plan </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tour-cards fade-in-on-scroll">
+                    <div class="offer">
+                        <img src="svg/limited.svg" alt="Limited">Popular
+                    </div>
+                    <div class="img-frame">
+                        <img src="gallery/Beauty-of-Skardu.webp" alt="tour" />
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <h2 class="destination">The Beauty of Skardu</h2>
+                            <div>
+                                <h2 class="price">Rs 15,000</h2>
+                                <div class="stay">4 Days (3 nights)</div>
+                            </div>
+                        </div>
+                        <div>
+                            <button>
+                                Book Now
+                            </button>
+                            <a href="package-layout.html?id=beauty-of-skardu">View plan </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tour-cards fade-in-on-scroll">
+                    <div class="offer">
+                        <img src="svg/limited.svg" alt="Limited"> Book Now
+                    </div>
+                    <div class="img-frame">
+                        <img src="gallery/chitta-katha-lake.webp" alt="tour" />
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <h2 class="destination">Chitta Khata Lake</h2>
+                            <div>
+                                <h2 class="price">Rs10,000</h2>
+                                <div class="stay">1 Day (0 Night)</div>
+                            </div>
+                        </div>
+                        <div>
+                            <button>
+                                Book Now
+                            </button>
+                            <a href="package-layout.html?id=chitta-katha-lake">View plan </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tour-cards fade-in-on-scroll">
+                    <div class="offer">
+                        <img src="svg/limited.svg" alt="Limited"> Book Now
+                    </div>
+                    <div class="img-frame">
+                        <img src="gallery/dagri.jpg" alt="tour" />
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <h2 class="destination">Dagri</h2>
+                            <div>
+                                <h2 class="price">Rs13,000</h2>
+                                <div class="stay">8 Days (7 nights)</div>
+                            </div>
+                        </div>
+                        <div>
+                            <button>
+                                Book Now
+                            </button>
+                            <a href="package-layout.html?id=dagri">View plan </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tour-cards fade-in-on-scroll">
+                    <div class="offer">
+                        <img src="svg/limited.svg" alt="Limited">Upcoming
+                    </div>
+                    <div class="img-frame">
+                        <img src="gallery/fairy-meadows-and-nanga-parbat.webp" alt="tour" />
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <h2 class="destination">Fairy Medows And Manga Parbat</h2>
+                            <div>
+                                <h2 class="price">Rs 24,000</h2>
+                                <div class="stay">8 Days (7 nights)</div>
+                            </div>
+                        </div>
+                        <div>
+                            <button>
+                                Book Now
+                            </button>
+                            <a href="package-layout.html?id=fairy-meadows-and-nanga-parbat">View plan </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tour-cards fade-in-on-scroll">
+                    <div class="offer">
+                        <img src="svg/limited.svg" alt="Limited">Popular
+                    </div>
+                    <div class="img-frame">
+                        <img src="gallery/hunza.webp" alt="tour" />
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <h2 class="destination">Hunza</h2>
+                            <div>
+                                <h2 class="price">Rs 27,000</h2>
+                                <div class="stay">3 Days (2 nights)</div>
+                            </div>
+                        </div>
+                        <div>
+                            <button>
+                                Book Now
+                            </button>
+                            <a href="package-layout.html?id=hunza">View plan </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tour-cards fade-in-on-scroll">
+                    <div class="offer">
+                        <img src="svg/limited.svg" alt="Limited"> Upcoming
+                    </div>
+                    <div class="img-frame">
+                        <img src="gallery/Kalash and chitral.webp" alt="tour" />
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <h2 class="destination">Kalash and Chitral</h2>
+                            <div>
+                                <h2 class="price">Rs 56,000</h2>
+                                <div class="stay">8 Days (7 nights)</div>
+                            </div>
+                        </div>
+                        <div>
+                            <button>
+                                Book Now
+                            </button>
+                            <a href="package.html?id=kalash-and-chitral">View plan </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tour-cards fade-in-on-scroll">
+                    <div class="offer">
+                        <img src="svg/limited.svg" alt="Limited"> Limited Seats
+                    </div>
+                    <div class="img-frame">
+                        <img src="gallery/khabeki-lake.webp" alt="tour" />
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <h2 class="destination">Khabeki Lake</h2>
+                            <div>
+                                <h2 class="price">Rs12,000</h2>
+                                <div class="stay">8 Days (7 nights)</div>
+                            </div>
+                        </div>
+                        <div>
+                            <button>
+                                Book Now
+                            </button>
+                            <a href="package.html?id=khabeki-lake">View plan </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tour-cards fade-in-on-scroll">
+                    <div class="offer">
+                        <img src="svg/limited.svg" alt="Limited"> Popular
+                    </div>
+                    <div class="img-frame">
+                        <img src="gallery/khanjrab.jpg" alt="tour" />
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <h2 class="destination">Khanjrab</h2>
+                            <div>
+                                <h2 class="price">Rs12,000</h2>
+                                <div class="stay">8 Days (7 nights)</div>
+                            </div>
+                        </div>
+                        <div>
+                            <button>
+                                Book Now
+                            </button>
+                            <a href="package.html?id=khanjrab">View plan </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tour-cards fade-in-on-scroll">
+                    <div class="offer">
+                        <img src="svg/limited.svg" alt="Limited"> Upcoming Tours
+                    </div>
+                    <div class="img-frame">
+                        <img src="gallery/sawat.webp" alt="tour" />
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <h2 class="destination">Sawat</h2>
+                            <div>
+                                <h2 class="price">Rs12,000</h2>
+                                <div class="stay">8 Days (7 nights)</div>
+                            </div>
+                        </div>
+                        <div>
+                            <button>
+                                Book Now
+                            </button>
+                            <a href="package.html?id=sawat">View plan </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tour-cards fade-in-on-scroll">
+                    <div class="offer">
+                        <img src="svg/limited.svg" alt="Limited"> Popular
+                    </div>
+                    <div class="img-frame">
+                        <img src="gallery/shangrila.webp" alt="tour" />
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <h2 class="destination">Shagri - La</h2>
+                            <div>
+                                <h2 class="price">Rs12,000</h2>
+                                <div class="stay">8 Days (7 nights)</div>
+                            </div>
+                        </div>
+                        <div>
+                            <button>
+                                Book Now
+                            </button>
+                            <a href="package.html?id=shangrila">View plan </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tour-cards fade-in-on-scroll">
+                    <div class="offer">
+                        <img src="svg/limited.svg" alt="Limited"> Popular
+                    </div>
+                    <div class="img-frame">
+                        <img src="gallery/skardu.webp" alt="tour" />
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <h2 class="destination">Skardu</h2>
+                            <div>
+                                <h2 class="price">Rs12,000</h2>
+                                <div class="stay">8 Days (7 nights)</div>
+                            </div>
+                        </div>
+                        <div>
+                            <button>
+                                Book Now
+                            </button>
+                            <a href="package.html?id=skardu">View plan </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tour-cards fade-in-on-scroll">
+                    <div class="offer">
+                        <img src="svg/limited.svg" alt="Limited"> Book Now
+                    </div>
+                    <div class="img-frame">
+                        <img src="gallery/taobat-kashmir.webp" alt="tour" />
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <h2 class="destination">Taobat Kashmir</h2>
+                            <div>
+                                <h2 class="price">Rs12,000</h2>
+                                <div class="stay">8 Days (7 nights)</div>
+                            </div>
+                        </div>
+                        <div>
+                            <button>
+                                Book Now
+                            </button>
+                            <a href="package.html?id=taobat-kashmir">View plan </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Popup -->
+    <div id="tour-popup" class="popup hidden">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="popup-destination">Destination Name</h2>
+            <iframe class="popup-map" src="" loading="lazy" allowfullscreen
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

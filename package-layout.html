@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Package Details</title>
+
+  <link rel="stylesheet" href="css/media_queries.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/utility_classes.css" />
+
+  <!-- ✅ Preload Google Fonts -->
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Oswald:wght@400;700&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Oswald:wght@400;700&display=swap" />
+  </noscript>
+
+  <style>
+    #package-hero {
+      position: relative;
+      height: 32rem;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      background-attachment: fixed;
+      width: 100%;
+    }
+
+    #package-hero-wrapper {
+      width: 90%;
+      margin: auto;
+      height: 100%;
+      display: flex;
+      align-items: end;
+      padding: 2rem 0;
+    }
+
+    #package-title {
+      font-size: 1.5rem;
+      color: white;
+    }
+
+    .main-overlay{
+      
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="header">
+    <a href="#">
+      <div id="logo-details">
+        <img src="images/logo.png" alt="Logo" id="logo" />
+        <h2 id="site-name">Travelify</h2>
+      </div>
+    </a>
+
+    <nav id="navigation">
+      <ul id="nav-wrapper">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact us</a></li>
+        <li><a href="#">About us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="package-hero">
+      <div class="main-overlay"></div>
+      <div id="package-hero-wrapper">
+        <h2 id="package-title">
+
+        </h2>
+      </div>
+    </section>
+  </main>
+
+
+  <script src="js/packages.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+
+    if (travelPackages[id]) {
+      const data = travelPackages[id];
+      document.getElementById('package-title').textContent = data.title;
+      document.getElementById('package-hero').style.backgroundImage = 'url("../gallery/shangrila.webp")';
+      document.getElementById('image').src = data.image;
+      document.getElementById
+        ('description').textContent = data.description;
+      document.getElementById('price').textContent = `Price: ${data.price}`;
+      document.getElementById('days').textContent = `Duration: ${data.days}`;
+
+      const highlightsEl = document.getElementById('highlights');
+      data.highlights.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        highlightsEl.appendChild(li);
+      });
+    } else {
+      document.getElementById('package-detail').textContent = 'Package not found!';
+    }
+  </script>
+</body>
+
+</html>

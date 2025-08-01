@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact us</title>
+    <!-- Adding media queries css styling sheet -->
+    <link rel="stylesheet" href="css/media_queries.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/utility_classes.css" />
+
+    <!-- ✅ Preload Google Fonts -->
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Oswald:wght@400;700&display=swap"
+        onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Oswald:wght@400;700&display=swap" />
+    </noscript>
+
+    <!-- ✅ Preload Reey Regular -->
+    <link rel="preload" as="font" href="https://db.onlinewebfonts.com/t/12ece9d4b11e224fbbd0b5ca246bb213.woff2"
+        type="font/woff2" crossorigin="anonymous" />
+
+    <!-- ✅ Reey Stylesheet -->
+    <link href="https://db.onlinewebfonts.com/c/12ece9d4b11e224fbbd0b5ca246bb213?family=Reey+Regular"
+        rel="stylesheet" />
+
+    <style>
+        .main-section-heading {
+            margin: 0 !important;
+        }
+
+        #hero {
+            background-image: url("/images/contactus-bg.jpg");
+        }
+
+        #contact-us {
+            height: 60vh;
+            width: 100%;
+        }
+
+        #contact-us-wrapper {
+            /* width: 90%; */
+            height: 100%;
+            margin: auto;
+        }
+
+        #contact-us-options {
+            width: 100%;
+            height: 100%;
+        }
+
+        #options-wrapper {
+            padding: 2rem 0;
+            height: auto;
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            margin: auto;
+        }
+
+        .options {
+            position: relative;
+            background: #fff;
+            border-radius: 1rem;
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            padding: 2rem 1rem;
+        }
+
+        .options::after,
+        .options::before {
+            content: "";
+
+            position: absolute;
+            border: none;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 100%;
+            padding: 5px;
+            width: 100%;
+            background-image: conic-gradient(from var(--angle),
+                    transparent,
+                    var(--secondary-color));
+            border-radius: 20px;
+            z-index: -1;
+            animation: rotate 3s linear infinite;
+        }
+
+        .options::before {
+            filter: blur(1.5rem);
+            opacity: 0.7;
+        }
+
+        .title {
+            color: var(--primary-color);
+            font-size: 1.2rem !important;
+        }
+
+        .options img {
+            width: 3rem;
+        }
+
+        .options p {
+            color: var(--text-muted);
+            text-align: center;
+            font-size: 0.8rem !important;
+        }
+
+        .options a {
+            color: black;
+            font-size: 1.2rem;
+            font-weight: 900;
+        }
+
+        /* Contact form */
+        #contact-form {
+            margin-top: 3rem;
+            display: flex;
+            align-items: center;
+            background-image: linear-gradient(to right, var(--primary-color), #004d74);
+            height: 30rem;
+        }
+
+        #contact-form .main-section-heading {
+            width: 50%;
+            color: white;
+        }
+
+        .login-box {
+            width: 40%;
+            padding: 3rem;
+            background: rgba(0, 0, 0, .5);
+            backdrop-filter: blur(1rem);
+            box-sizing: border-box;
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, .6);
+            border-radius: 1rem;
+        }
+
+        .login-box .user-box {
+            position: relative;
+        }
+
+        .login-box .user-box input {
+            width: 100%;
+            padding: 1rem 0;
+            color: #fff;
+            margin-bottom: 2rem;
+            border: none;
+            border-bottom: 1px solid #fff;
+            outline: none;
+            background: transparent;
+        }
+
+        .login-box .user-box label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 1rem 0;
+            color: #fff;
+            pointer-events: none;
+            transition: .2s;
+        }
+
+        .login-box .user-box input:focus~label,
+        .login-box .user-box input:valid~label {
+            top: -20px;
+            left: 0;
+            color: var(--secondary-color);
+            font-size: 12px;
+        }
+
+        .login-box form a {
+            position: relative;
+            display: inline-block;
+            padding: 10px 20px;
+            color: var(--secondary-color);
+            text-decoration: none;
+            text-transform: uppercase;
+            overflow: hidden;
+            transition: .5s;
+            letter-spacing: 0.1re;
+        }
+
+        input[type="submit"] {
+            background: transparent;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <a href="#">
+            <div id="logo-details">
+                <img src="images/logo.png" alt="Logo" id="logo" />
+                <h2 id="site-name">Travelify</h2>
+            </div>
+        </a>
+
+        <nav id="navigation">
+            <ul id="nav-wrapper">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="#">About us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="main-overlay"></div>
+            <div id="main-content">
+                <h1 id="tagline" class="fade-in-on-scroll">
+                    Join Our <span class="fade-in-on-scroll">Travel</span> Vibe
+                </h1>
+                <div id="button-div">
+                    <button class="book-now">Book Now</button>
+                    <button class="tours">Tours</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact-us">
+            <div id="contact-us-wrapper">
+                <div id="contact-us-options">
+                    <h1 class="main-section-heading fade-in-on-scroll">
+                        Some Options For You
+                    </h1>
+                    <div id="options-wrapper" class="fade-in-on-scroll">
+                        <div class="options" id="option-1">
+                            <img src="svg/email.svg" alt="">
+                            <h2 class="title">
+                                Email
+                            </h2>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam officia quos excepturi!
+                            </p>
+                            <a href="">info@travelify.com</a>
+                        </div>
+                        <div class="options" id="option-1">
+                            <img src="svg/whatsapp.svg" alt="">
+                            <h2 class="title">
+                                Whatsapp
+                            </h2>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam officia quos excepturi!
+                            </p>
+                            <a href="">+92 123 456789</a>
+                        </div>
+                        <div class="options" id="option-1">
+                            <img src="svg/location.svg" alt="">
+                            <h2 class="title">
+                                Location
+                            </h2>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam officia quos excepturi!
+                            </p>
+                            <a href="">View On Google Map</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="contact-form">
+                    <h1 class="main-section-heading fade-in-on-scroll">
+                        One Step for Our Journey Together
+                    </h1>
+                    <div class="login-box fade-in-on-scroll">
+                        <form action="https://formsubmit.co/nt50616849@gmail.com" method="POST">
+                            <div class="user-box">
+                                <input autocomplete="off" type="text" name="username" required="">
+                                <label>Username</label>
+                            </div>
+                            <div class="user-box">
+                                <input autocomplete="off" type="email" name="email" required="">
+                                <label>Email</label>
+                            </div>
+
+                            <button type="submit">Submit</button>
+
+                            <!-- Redirect after submit -->
+                            <input type="hidden" name="_next" value="https://localhost:3000/thankyou.html">
+
+                            <!-- Prevent bot spam -->
+                            <input type="text" name="_honey" style="display:none">
+
+                            <!-- Disable CAPTCHA -->
+                            <input type="hidden" name="_captcha" value="false">
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const inputs = document.querySelectorAll("form input , form textarea");
+
+        inputs.forEach((input) => {
+            input.addEventListener("blur", () => {
+                if (input.value.trim() !== "") {
+                    input.classList.add("has-value");
+                } else {
+                    input.classList.remove("has-value");
+                }
+            });
+        });
+    </script>
+
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

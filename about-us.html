@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About us | Travelify</title>
+    <!-- Adding media queries css styling sheet -->
+    <link rel="stylesheet" href="css/media_queries.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/utility_classes.css" />
+
+    <!-- ✅ Preload Google Fonts -->
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Oswald:wght@400;700&display=swap"
+        onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Oswald:wght@400;700&display=swap" />
+    </noscript>
+
+    <!-- ✅ Preload Reey Regular -->
+    <link rel="preload" as="font" href="https://db.onlinewebfonts.com/t/12ece9d4b11e224fbbd0b5ca246bb213.woff2"
+        type="font/woff2" crossorigin="anonymous" />
+
+    <!-- ✅ Reey Stylesheet -->
+    <link href="https://db.onlinewebfonts.com/c/12ece9d4b11e224fbbd0b5ca246bb213?family=Reey+Regular"
+        rel="stylesheet" />
+
+    <style>
+        #hero {
+            background-image: url("images/about-us-bg.jpg");
+        }
+
+        #who-we-are {
+            height: auto;
+            width: 100%;
+            padding: 5rem 0;
+        }
+
+        #who-we-are-wrapper {
+            width: 90%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+        }
+
+        #who-we-are-wrapper>div {
+            width: 50%;
+        }
+
+        #content-who-we-are {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        #content-who-we-are p {
+            color: var(--text-muted);
+            font-size: 0.95rem !important;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        p a {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            font-weight: 900;
+            cursor: pointer;
+        }
+
+        #content-who-we-are p span {
+            color: black;
+            font-weight: 900;
+        }
+
+        #visual-who-we-are {
+            display: flex;
+            justify-content: end;
+        }
+
+        #visual-who-we-are img {
+            position: relative;
+            border-radius: 1rem;
+            box-shadow: 0.2rem 0.2rem 0.5rem grey;
+            width: 80%;
+            cursor: pointer;
+            height: 20rem;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+
+        #visual-who-we-are img:hover {
+            transform: translateY(-1rem);
+            box-shadow: 0.2rem 0.2rem 2rem grey;
+        }
+
+        /* founder */
+        #founder {
+            position: relative;
+            background-image: url("/images/founder-bg.jpg");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: auto;
+            width: 100%;
+            margin-top: 3rem;
+            padding: 5rem 0;
+            z-index: 2;
+        }
+
+        #founder::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.247);
+            z-index: -1;
+        }
+
+        #founder-wrapper {
+            margin: auto;
+            width: 90%;
+            display: flex;
+        }
+
+        #content-founder,
+        #visual-founder {
+            width: 50%;
+        }
+
+        p {
+            color: white;
+        }
+
+        p span {
+            color: var(--secondary-color);
+            font-size: 1.5rem !important;
+            font-weight: 900;
+        }
+
+        #visual-founder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #id-card {
+            width: 0%;
+            overflow: hidden;
+            padding: 1rem;
+            border-radius: 1rem;
+            height: auto;
+            background-color: rgba(0, 0, 0, 0.335);
+            backdrop-filter: blur(0.5rem);
+        }
+
+        #id-card-essential {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            transition: all 1s 1s ease;
+        }
+
+        #id-name {
+            color: var(--secondary-color);
+            white-space: nowrap;
+        }
+
+        #id-profile {
+            width: 5rem;
+            object-fit: cover;
+            object-position: top;
+            height: 5rem;
+            border: 5px solid var(--primary-color);
+            border-radius: 50%;
+        }
+
+        #id-card.fade-in-on-scroll {
+            width: 0%;
+        }
+
+        #id-card.fade-in-on-scroll #id-card-essential {
+            opacity: 0;
+        }
+
+        #id-card.fade-in-on-scroll.visible {
+            width: 65%;
+        }
+
+        #id-card.fade-in-on-scroll.visible #id-card-essential {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <a href="#">
+            <div id="logo-details">
+                <img src="images/logo.png" alt="Logo" id="logo" />
+                <h2 id="site-name">Travelify</h2>
+            </div>
+        </a>
+
+        <nav id="navigation">
+            <ul id="nav-wrapper">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="#">About us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="main-overlay"></div>
+            <div id="main-content">
+                <h1 id="tagline" class="fade-in-on-scroll">
+                    Where Every <span class="fade-in-on-scroll">Trip</span> Becomes a Story
+                </h1>
+                <div id="button-div">
+                    <button class="book-now">Book Now</button>
+                    <button class="tours">Tours</button>
+                </div>
+            </div>
+        </section>
+
+        <div id="who-we-are">
+            <div id="who-we-are-wrapper">
+                <div id="content-who-we-are">
+                    <h1 class="main-section-heading fade-in-on-scroll">
+                        Who we Are?
+                    </h1>
+                    <p>
+                        At <a href="index.html">Travelify</a>, we’re not just a travel agency — we’re a group of
+                        passionate
+                        explorers, storytellers, and memory-makers. Since <span>2018</span>, we’ve helped thousands of
+                        travelers
+                        discover breathtaking landscapes, hidden gems, and cultural treasures across the globe.
+                    </p>
+                    <button onclick="window.location.href = 'http://127.0.0.1:3000/photo-gallery.html'">Visit
+                        Gallery</button>
+                </div>
+                <div id="visual-who-we-are">
+                    <img src="gallery/shangrila.webp" alt="who we are">
+                </div>
+            </div>
+        </div>
+
+        <div id="founder">
+            <div id="founder-wrapper">
+                <div id="content-founder" class="fade-in-on-scroll">
+                    <h1 class="main-section-heading">
+                        About Our Founder
+                    </h1>
+                    <p>
+                        <span>Nouman Tariq</span> is the founder of <a href="index.html">Travelify</a>, a travel and
+                        tourism website.
+                        Passionate about adventure and digital innovation, he built Travelify to simplify trip planning.
+                        His goal is to inspire meaningful journeys across the globe.
+                    </p>
+                </div>
+                <div id="visual-founder">
+                    <div id="id-card" class="fade-in-on-scroll fade-in from-right">
+                        <div id="id-card-essential">
+                            <img src="images/IMG_20250707_090723_695.png" alt="founder" id="id-profile">
+                            <div id="id-name">
+                                <h2>Nouman Tariq</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- News Letter -->
+        <section id="news-letter">
+            <div id="news-letter-wrapper">
+                <div id="news-letter-content">
+                    <h1 class="main-section-heading">24/7 Customer Support</h1>
+                </div>
+
+                <div id="news-letter-form">
+                    <div class="login-box fade-in-from-right">
+                        <form action="https://formsubmit.co/nt50616849@gmail.com" method="POST">
+                            <div class="user-box">
+                                <input autocomplete="off" type="text" name="Username" required="">
+                                <label>Username</label>
+                            </div>
+                            <div class="user-box">
+                                <input autocomplete="off" type="text" name="Review" required="">
+                                <label>Review</label>
+                            </div>
+
+                            <button type="submit">Submit</button>
+
+                            <!-- Redirect after submit -->
+                            <input type="hidden" name="_next" value="http://127.0.0.1:3000/thankyou.html">
+
+                            <!-- Prevent bot spam -->
+                            <input type="text" name="_honey" style="display:none">
+
+                            <!-- Disable CAPTCHA -->
+                            <input type="hidden" name="_captcha" value="false">
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

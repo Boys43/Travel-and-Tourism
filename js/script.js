@@ -15,6 +15,24 @@ window.addEventListener("scroll", () => {
     nav.classList.remove("sticky-nav");
   }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const currentPath = location.pathname.split("/").pop() || "index.html";
+
+  document.querySelectorAll("#nav-wrapper li").forEach((li) => {
+    const link = li.querySelector("a");
+    if (link && link.getAttribute("href") === currentPath) {
+      li.classList.add("active-link");
+    }
+  });
+});
+
+// Hamburger
+
+function toggleMenu() {
+  document.getElementById("navigation").classList.toggle("active");
+}
+
 // Load when reaches viewport
 
 const observer = new IntersectionObserver((entries) => {
@@ -80,8 +98,8 @@ document.querySelectorAll(".fade-in").forEach((el) => {
 
 const cards = document.querySelectorAll(".img-frame");
 const popup = document.getElementById("tour-popup");
-const closeBtn = popup.querySelector(".close-btn");
 const destinationTitle = popup.querySelector(".popup-destination");
+const closeBtn = popup.querySelector(".close-btn");
 const mapFrame = popup.querySelector(".popup-map");
 const overlay = document.querySelector(".main-overlay");
 
@@ -121,4 +139,28 @@ overlay.onclick = () => {
 
 document.querySelector("#whatsapp-icon img").addEventListener("click", () => {
   document.getElementById("whatsapp-main").classList.toggle("toggle-display");
+});
+
+function updateClassesBasedOnScreenSize() {
+  const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+  if (isMobile) {
+    document.querySelectorAll(".fade-in").forEach((el) => {
+      el.classList.remove("fade-in");
+    });
+  }
+}
+
+// Run once on load
+updateClassesBasedOnScreenSize();
+
+// Re-run on screen resize
+window.addEventListener("resize", updateClassesBasedOnScreenSize);
+
+// Loader
+
+window.addEventListener("load", () => {
+  const preloader = document.getElementById("preloader");
+  preloader.classList.add("hidden");
+  document.body.style.overflow = "auto"; // Restore scroll
 });

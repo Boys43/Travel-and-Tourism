@@ -5,6 +5,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About us | Travelify</title>
+    <!-- Favicon for .ico -->
+    <link rel="icon" type="image/png" href="favicon-32x32.png" />
+
+    <title>Travelify</title>
     <!-- Adding media queries css styling sheet -->
     <link rel="stylesheet" href="css/media_queries.css" />
     <link rel="stylesheet" href="css/style.css" />
@@ -26,7 +30,6 @@
     <!-- ✅ Reey Stylesheet -->
     <link href="https://db.onlinewebfonts.com/c/12ece9d4b11e224fbbd0b5ca246bb213?family=Reey+Regular"
         rel="stylesheet" />
-
     <style>
         #hero {
             background-image: url("images/about-us-bg.jpg");
@@ -208,12 +211,18 @@
             </div>
         </a>
 
+        <div id="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
         <nav id="navigation">
             <ul id="nav-wrapper">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact us</a></li>
-                <li><a href="#">About us</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact-us.html">Contact us</a></li>
+                <li><a href="about-us.html">About us</a></li>
             </ul>
         </nav>
     </header>
@@ -316,6 +325,57 @@
             </div>
         </section>
     </main>
+
+    <footer>
+        <div id="footer-wrapper">
+            <div id="footer-main">
+                <div>
+                    <img src="images/logo.png" alt="Logo">
+                    <h1 class="main-section-heading">
+                        Travelify
+                    </h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, delectus ex molestiae
+                        debitis
+                        officia voluptatem iure impedit nemo, eius nisi doloribus tempora! Odit.
+                    </p>
+                </div>
+                <div>
+                    <h2>Our Pages</h2>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="packages.html">Packages</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about-us.html">About us</a></li>
+                        <li><a href="photo-gallery.html">Gallery</a></li>
+                        <li><a href="contact-us.html">Contact us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>Where do you find us</h2>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13595.85045373523!2d74.36276374571696!3d31.580073088697226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39191b000b6090df%3A0x2059b3ccd445b938!2sBrains%20College%20Baghbanpura%20Campus!5e0!3m2!1sen!2s!4v1754074556462!5m2!1sen!2s"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div>
+                    <h2>Contact Us</h2>
+                    <h3>Email: <a href="https://gmail.com">indo@travelify@gmail.com</a></h3>
+                    <h3>Contact: <a href="https://gmail.com">+92 123 456789</a></h3>
+                    <div id="social-icons">
+                        <a href="https://www.instagram.com"><img src="svg/insta.svg" alt="insta"></a>
+                        <a href="https://www.instagram.com"><img src="svg/yt.svg" alt="insta"></a>
+                        <a href="https://www.instagram.com"><img src="svg/fb.svg" alt="insta"></a>
+                        <a href="https://www.instagram.com"><img src="svg/tiktok.svg" alt="insta"></a>
+                    </div>
+                </div>
+            </div>
+            <div id="copyright">
+                <p>Copyright &copy; | All rights are reserved </p>
+                <a href="privacy-policy.html">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
 
     <script src="js/script.js"></script>
 </body>

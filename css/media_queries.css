@@ -66,6 +66,10 @@
   .testimonials-carousel {
     height: 55vh !important;
   }
+
+  #news-letter {
+    height: 20vh !important;
+  }
 }
 
 /* 📱 Tablets */
@@ -82,19 +86,20 @@
   p {
     font-size: 0.95rem !important;
   }
+
   #hero {
     height: 70vh !important;
+    text-align: center;
   }
+
   #tagline {
-    max-width: 100% !important;
+    width: 100% !important;
   }
+
   #main-content {
     text-align: center;
   }
 
-  /* section {
-    height: 40rem !important;
-  } */
   #upcoming-tours {
     height: auto !important;
   }
@@ -110,7 +115,8 @@
     height: 50rem !important;
   }
 
-  #custom-tour-wrapper,h1{
+  #custom-tour-wrapper,
+  h1 {
     width: 100% !important;
     flex-direction: column;
   }
@@ -119,8 +125,73 @@
     height: 45vh !important;
   }
 
-  #top-destiny{
+  #top-destiny {
     height: 15rem !important;
+  }
+
+  #news-letter {
+    height: 40vh !important;
+  }
+
+  /* Footer */
+
+  #footer-wrapper #footer-main {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  #footer-main div:nth-child(1) {
+    display: none !important;
+  }
+
+  /* Contact us page> #options-wrapper */
+
+  #options-wrapper {
+    flex-direction: column;
+    gap: 5rem;
+    align-items: center;
+    width: 100% !important;
+  }
+
+  #options-wrapper .options {
+    width: 80% !important;
+  }
+
+  /* Services Page > #core-services-wrapper */
+
+  #core-services-wrapper {
+    flex-direction: column !important;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  #core-services-wrapper #services-grid {
+    width: 80% !important;
+  }
+
+  /* Services Page > experiences-wrapper */
+  #experiences-wrapper {
+    flex-direction: column !important;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  #experiences-wrapper #experiences-section{
+    align-items: center;
+    flex-direction: column !important;
+  }
+
+  #experiences-section>div{
+    width: 70% !important;
+  }
+
+  #about-us-wrapper{
+    flex-direction: column-reverse !important;
+  }
+
+  #about-us-wrapper > div {
+    width: 100% !important;
   }
 }
 
@@ -144,15 +215,10 @@
   #hero {
     height: 55vh !important;
   }
+
   #tagline {
-    max-width: 50% !important;
+    width: 100% !important;
   }
-  #main-content {
-    text-align: center;
-  }
-  /* section {
-    height: 35rem !important;
-  } */
   #upcoming-tours {
     height: auto !important;
   }
@@ -162,6 +228,30 @@
 
   .testimonials-carousel {
     height: 35vh !important;
+  }
+
+  #news-letter {
+    height: 35vh !important;
+  }
+
+  #news-letter-wrapper {
+    flex-direction: column;
+  }
+
+  #news-letter-form {
+    width: 100% !important;
+  }
+
+  #news-letter {
+    height: 35vh !important;
+  }
+
+  #news-letter-content {
+    display: none !important;
+  }
+
+  #footer-main div:nth-child(1) {
+    display: none !important;
   }
 }
 
@@ -188,9 +278,7 @@
   #main-content {
     text-align: center;
   }
-  /* section {
-    height: 30rem !important;
-  } */
+
   #upcoming-tours {
     height: auto !important;
   }
@@ -201,30 +289,26 @@
   .testimonials-carousel {
     height: 30vh !important;
   }
+
+  #footer-main div:nth-child(1) {
+    display: none !important;
+  }
 }
 
 @media (max-width: 1024px) {
   #Gallery-wrapper {
-    column-count: 3;
+    column-count: 4 !important;
   }
 }
 
 @media (max-width: 768px) {
   #Gallery-wrapper {
-    column-count: 2;
+    column-count: 3 !important;
   }
 }
 
 @media (max-width: 480px) {
   #Gallery-wrapper {
-    column-count: 1;
-  }
-
-  #upcoming-tours {
-    height: auto !important;
-  }
-
-  #Services-wrapper {
-    flex-direction: column;
+    column-count: 2 !important;
   }
 }

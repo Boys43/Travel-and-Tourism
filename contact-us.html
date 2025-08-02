@@ -37,12 +37,12 @@
         }
 
         #contact-us {
-            height: 60vh;
+            /* min-height: 60vh; */
             width: 100%;
         }
 
         #contact-us-wrapper {
-            /* width: 90%; */
+            width: 90%;
             height: 100%;
             margin: auto;
         }
@@ -125,80 +125,14 @@
             margin-top: 3rem;
             display: flex;
             align-items: center;
-            background-image: linear-gradient(to right, var(--primary-color), #004d74);
             height: 30rem;
-        }
-
-        #contact-form .main-section-heading {
-            width: 50%;
-            color: white;
-        }
-
-        .login-box {
-            width: 40%;
-            padding: 3rem;
-            background: rgba(0, 0, 0, .5);
-            backdrop-filter: blur(1rem);
-            box-sizing: border-box;
-            box-shadow: 0 1rem 2rem rgba(0, 0, 0, .6);
-            border-radius: 1rem;
-        }
-
-        .login-box .user-box {
-            position: relative;
-        }
-
-        .login-box .user-box input {
-            width: 100%;
-            padding: 1rem 0;
-            color: #fff;
-            margin-bottom: 2rem;
-            border: none;
-            border-bottom: 1px solid #fff;
-            outline: none;
-            background: transparent;
-        }
-
-        .login-box .user-box label {
-            position: absolute;
-            top: 0;
-            left: 0;
-            padding: 1rem 0;
-            color: #fff;
-            pointer-events: none;
-            transition: .2s;
-        }
-
-        .login-box .user-box input:focus~label,
-        .login-box .user-box input:valid~label {
-            top: -20px;
-            left: 0;
-            color: var(--secondary-color);
-            font-size: 12px;
-        }
-
-        .login-box form a {
-            position: relative;
-            display: inline-block;
-            padding: 10px 20px;
-            color: var(--secondary-color);
-            text-decoration: none;
-            text-transform: uppercase;
-            overflow: hidden;
-            transition: .5s;
-            letter-spacing: 0.1re;
-        }
-
-        input[type="submit"] {
-            background: transparent;
-            border: none;
         }
     </style>
 </head>
 
 <body>
     <!-- Header -->
-    <header class="header">
+    <header>
         <a href="#">
             <div id="logo-details">
                 <img src="images/logo.png" alt="Logo" id="logo" />
@@ -206,12 +140,18 @@
             </div>
         </a>
 
+        <div id="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
         <nav id="navigation">
             <ul id="nav-wrapper">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact us</a></li>
-                <li><a href="#">About us</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact-us.html">Contact us</a></li>
+                <li><a href="about-us.html">About us</a></li>
             </ul>
         </nav>
     </header>
@@ -269,38 +209,111 @@
                         </div>
                     </div>
                 </div>
-                <div id="contact-form">
-                    <h1 class="main-section-heading fade-in-on-scroll">
-                        One Step for Our Journey Together
-                    </h1>
-                    <div class="login-box fade-in-on-scroll">
-                        <form action="https://formsubmit.co/nt50616849@gmail.com" method="POST">
-                            <div class="user-box">
-                                <input autocomplete="off" type="text" name="username" required="">
-                                <label>Username</label>
+                <section id="news-letter">
+                    <div id="news-letter-wrapper">
+                        <div id="news-letter-content">
+                            <h1 class="main-section-heading">Subscribe to our <span>News Letter</span></h1>
+                        </div>
+
+                        <div id="news-letter-form">
+                            <div class="login-box fade-in-from-right">
+                                <form action="https://formsubmit.co/nt50616849@gmail.com" method="POST">
+                                    <div class="user-box">
+                                        <input autocomplete="off" type="text" name="Username" required="">
+                                        <label>Username</label>
+                                    </div>
+                                    <div class="user-box">
+                                        <input autocomplete="off" type="text" name="Review" required="">
+                                        <label>Email</label>
+                                    </div>
+
+                                    <button type="submit">Submit</button>
+
+                                    <!-- Redirect after submit -->
+                                    <input type="hidden" name="_next" value="https://localhost:3000/thankyou.html">
+
+                                    <!-- Prevent bot spam -->
+                                    <input type="text" name="_honey" style="display:none">
+
+                                    <!-- Disable CAPTCHA -->
+                                    <input type="hidden" name="_captcha" value="false">
+                                </form>
                             </div>
-                            <div class="user-box">
-                                <input autocomplete="off" type="email" name="email" required="">
-                                <label>Email</label>
-                            </div>
-
-                            <button type="submit">Submit</button>
-
-                            <!-- Redirect after submit -->
-                            <input type="hidden" name="_next" value="https://localhost:3000/thankyou.html">
-
-                            <!-- Prevent bot spam -->
-                            <input type="text" name="_honey" style="display:none">
-
-                            <!-- Disable CAPTCHA -->
-                            <input type="hidden" name="_captcha" value="false">
-                        </form>
+                        </div>
 
                     </div>
-                </div>
+                </section>
             </div>
         </section>
     </main>
+
+    <footer>
+        <div id="footer-wrapper">
+            <div id="footer-main">
+                <div>
+                    <img src="images/logo.png" alt="Logo">
+                    <h1 class="main-section-heading">
+                        Travelify
+                    </h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, delectus ex molestiae
+                        debitis
+                        officia voluptatem iure impedit nemo, eius nisi doloribus tempora! Odit.
+                    </p>
+                </div>
+                <div>
+                    <h2>Our Pages</h2>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="packages.html">Packages</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about-us.html">About us</a></li>
+                        <li><a href="photo-gallery.html">Gallery</a></li>
+                        <li><a href="contact-us.html">Contact us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>Where do you find us</h2>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13595.85045373523!2d74.36276374571696!3d31.580073088697226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39191b000b6090df%3A0x2059b3ccd445b938!2sBrains%20College%20Baghbanpura%20Campus!5e0!3m2!1sen!2s!4v1754074556462!5m2!1sen!2s"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div>
+                    <h2>Contact Us</h2>
+                    <h3>Email: <a href="https://gmail.com">indo@travelify@gmail.com</a></h3>
+                    <h3>Contact: <a href="https://gmail.com">+92 123 456789</a></h3>
+                    <div id="social-icons">
+                        <a href="https://www.instagram.com"><img src="svg/insta.svg" alt="insta"></a>
+                        <a href="https://www.instagram.com"><img src="svg/yt.svg" alt="insta"></a>
+                        <a href="https://www.instagram.com"><img src="svg/fb.svg" alt="insta"></a>
+                        <a href="https://www.instagram.com"><img src="svg/tiktok.svg" alt="insta"></a>
+                    </div>
+                </div>
+            </div>
+            <div id="copyright">
+                <p>Copyright &copy; | All rights are reserved </p>
+                <a href="privacy-policy.html">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="preloader">
+        <div class="folding-cube">
+            <div class="cube">
+                <div class="cube-part"></div>
+            </div>
+            <div class="cube">
+                <div class="cube-part"></div>
+            </div>
+            <div class="cube">
+                <div class="cube-part"></div>
+            </div>
+            <div class="cube">
+                <div class="cube-part"></div>
+            </div>
+        </div>
+    </div>
 
     <script>
         const inputs = document.querySelectorAll("form input , form textarea");

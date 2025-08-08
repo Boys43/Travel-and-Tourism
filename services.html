@@ -29,6 +29,11 @@
         rel="stylesheet" />
 
     <style>
+        body {
+            overflow-x: hidden;
+
+        }
+
         #hero {
             background-image: url("images/services-bg.jpg");
         }
@@ -405,6 +410,8 @@
             <ul id="nav-wrapper">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Services</a></li>
+                <li><a href="transport-choices.html">Book a Transport</a></li>
+                <li><a href="http://127.0.0.1:3000/photo-gallery.html">Gallery</a></li>
                 <li><a href="contact-us.html">Contact us</a></li>
                 <li><a href="about-us.html">About us</a></li>
             </ul>
@@ -541,6 +548,7 @@
             <div id="news-letter-wrapper">
                 <div id="news-letter-content">
                     <h1 class="main-section-heading">Subscribe to our <span>News Letter</span></h1>
+                    <button onclick="window.location.href = 'contact-us.html'">Contact us</button>
                 </div>
 
                 <div id="news-letter-form">
@@ -558,7 +566,7 @@
                             <button type="submit">Submit</button>
 
                             <!-- Redirect after submit -->
-                            <input type="hidden" name="_next" value="https://localhost:3000/thankyou.html">
+                            <input type="hidden" name="_next" value="http://localhost:3000/thankyou.html">
 
                             <!-- Prevent bot spam -->
                             <input type="text" name="_honey" style="display:none">
@@ -567,11 +575,49 @@
                             <input type="hidden" name="_captcha" value="false">
                         </form>
                     </div>
+
                 </div>
 
             </div>
         </section>
     </main>
+
+    <div id="whatsapp-model">
+        <div id="whatsapp-main">
+            <div id="whatsapp-contact" class="fade-in-on-scroll">
+                <img src="images/image.png" alt="">
+                <div id="whatsapp-content">
+                    <p>
+                        Travelify
+                    </p>
+                    <p>
+                        Nouman Tariq (Owner)
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="whatsapp-icon"><img src="images/image.png" alt=""></div>
+        <div id="up">
+            <img src="svg/up.svg" alt="up">
+        </div>
+    </div>
+
+    <div id="preloader">
+        <div class="folding-cube">
+            <div class="cube">
+                <div class="cube-part"></div>
+            </div>
+            <div class="cube">
+                <div class="cube-part"></div>
+            </div>
+            <div class="cube">
+                <div class="cube-part"></div>
+            </div>
+            <div class="cube">
+                <div class="cube-part"></div>
+            </div>
+        </div>
+    </div>
 
     <footer>
         <div id="footer-wrapper">

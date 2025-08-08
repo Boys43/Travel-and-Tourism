@@ -74,6 +74,15 @@
 
 /* 📱 Tablets */
 @media screen and (max-width: 768px) {
+  body {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+
   html {
     font-size: 12px !important;
   }
@@ -177,16 +186,16 @@
     align-items: center;
   }
 
-  #experiences-wrapper #experiences-section{
+  #experiences-wrapper #experiences-section {
     align-items: center;
     flex-direction: column !important;
   }
 
-  #experiences-section>div{
+  #experiences-section > div {
     width: 70% !important;
   }
 
-  #about-us-wrapper{
+  #about-us-wrapper {
     flex-direction: column-reverse !important;
   }
 

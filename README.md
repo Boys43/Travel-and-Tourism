@@ -5,8 +5,7 @@
 ---
 
 ## 🎯 Key Highlights
-
-- 🧊 **3D Cube Preloader** for engaging page load experience
+- **Loading Animations**
 - 🧾 **Animated Counters** using Odometer.js
 - 🧭 **Custom-Built Layout** using pure raw CSS (no frameworks)
 - 📱 **Mobile-Responsive Navigation** with hamburger menu
@@ -53,6 +52,7 @@ Travelify/
 ├── about-us.html
 ├── contact-us.html
 ├── packages.html
+├── transport-choices.html
 ├── services.html
 ├── photo-gallery.html
 ├── privacy-policy.html
@@ -65,8 +65,9 @@ Travelify/
 ├── js/
 │   ├── script.js               # Custom JS for interactions
 │   ├── swiper.js               # Swiper carousel setup
-│   └── gsap.js                 # GSAP scroll animations
-│
+│   ├── gsap.js                 # GSAP scroll animations
+│   └── packages.js
+|
 ├── images/
 │   ├── logo.png
 │   ├── Background Design Vector Png.png

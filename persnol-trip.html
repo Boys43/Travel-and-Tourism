@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Tour | Travelify</title>
+
+    <link rel="stylesheet" href="css/media_queries.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/utility_classes.css" />
+
+    <!-- ✅ Preload Google Fonts -->
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Oswald:wght@400;700&display=swap"
+        onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Oswald:wght@400;700&display=swap" />
+    </noscript>
+
+    <!-- ✅ Preload Reey Regular -->
+    <link rel="preload" as="font" href="https://db.onlinewebfonts.com/t/12ece9d4b11e224fbbd0b5ca246bb213.woff2"
+        type="font/woff2" crossorigin="anonymous" />
+
+    <!-- ✅ Reey Stylesheet -->
+    <link href="https://db.onlinewebfonts.com/c/12ece9d4b11e224fbbd0b5ca246bb213?family=Reey+Regular"
+        rel="stylesheet" />
+
+    <style>
+        #hero {
+            background-image: url("/images/contactus-bg.jpg");
+        }
+
+        .custom-tour-wrapper {
+            background: #0076b5;
+            max-width: 900px;
+            margin: auto;
+            backdrop-filter: blur(12px);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            animation: slideUp 0.6s ease-out;
+            margin-top: 5rem;
+            margin-bottom: 5rem;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .custom-tour-wrapper h1 {
+            text-align: center;
+            font-size: 2.4rem;
+            margin-bottom: 0.5rem;
+            color: gold;
+        }
+
+        .tour-subtext {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+            color: white;
+        }
+
+        .custom-tour-form {
+            display: flex;
+            width: 100%;
+            /* align-items: center; */
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            position: relative;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid white;
+            color: white;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        /* Floating label */
+        .form-group label {
+            font-size: 0.9rem;
+            position: absolute;
+            left: 1rem;
+            top: 1rem;
+            pointer-events: none;
+            transition: 0.3s ease;
+            color: white;
+            background-color: #0076b5;
+            width: 50%;
+            height: 50%;
+        }
+
+        .form-group input:focus~label,
+        .form-group input:valid~label,
+        .form-group textarea:focus~label,
+        .form-group textarea:valid~label {
+            top: -0.7rem;
+            left: 0.8rem;
+            font-size: 0.75rem;
+            color: gold;
+            background-color: #0076b5;
+            padding: 0 6px;
+            border-radius: 4px;
+        }
+
+        /* Fix for input type="date" */
+        input[type="date"] {
+            padding-right: 2rem;
+        }
+
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            filter: invert(1);
+            cursor: pointer;
+            background-color: var(--primary-color);
+        }
+
+        /* Floating label for date */
+        input[type="date"]:focus~label,
+        input[type="date"]:valid~label {
+            top: -0.7rem;
+            left: 0.8rem;
+            font-size: 0.75rem;
+            color: gold;
+            background-color: #0076b5;
+            padding: 0 6px;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 600px) {
+            .custom-tour-wrapper {
+                padding: 1.5rem;
+            }
+
+            .custom-tour-wrapper h1 {
+                font-size: 1.7rem;
+            }
+        }
+
+        form button {
+            width: 50%;
+            align-self: flex-end;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <a href="#">
+            <div id="logo-details">
+                <img src="images/logo.png" alt="Logo" id="logo" />
+                <h2 id="site-name">Travelify</h2>
+            </div>
+        </a>
+
+        <div id="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav id="navigation">
+            <ul id="nav-wrapper">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="transport-choices.html">Book a Transport</a></li>
+                <li><a href="http://127.0.0.1:3000/photo-gallery.html">Gallery</a></li>
+                <li><a href="contact-us.html">Contact us</a></li>
+                <li><a href="about-us.html">About us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- <section id="custom-tour"> -->
+    <main>
+
+        <section id="hero">
+            <div class="main-overlay"></div>
+            <div id="main-content">
+                <h1 id="tagline" class="fade-in-on-scroll">
+                    Plan Your <span class="fade-in-on-scroll">Personalized</span> Trip Today
+                </h1>
+                <div id="button-div">
+                    <button class="book-now">Book Now</button>
+                    <button class="tours">Tours</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="custom-tour-wrapper">
+            <h1 class="main-section-heading fade-in-on-scroll">
+                Design Your Own Tour ✈️
+            </h1>
+            <p class="tour-subtext">
+                Tailor your adventure with Travelify – your journey, your way!
+            </p>
+
+            <form action="https://formsubmit.co/nt50616849@gmail.com" method="POST"
+                class="custom-tour-form fade-in-on-scroll">
+                <div class="form-group">
+                    <input autocomplete="off" type="text" name="fullname" required />
+                    <label>Full Name</label>
+                </div>
+
+                <div class="form-group">
+                    <input autocomplete="off" type="email" name="email" required />
+                    <label>Email Address</label>
+                </div>
+
+                <div class="form-group">
+                    <input autocomplete="off" type="tel" name="phone" required />
+                    <label>Phone Number</label>
+                </div>
+
+                <div class="form-group">
+                    <input autocomplete="off" type="text" name="destination" id="destination-title" required />
+                    <label>Preferred Destination / Tour Name</label>
+                </div>
+
+                <div class="form-group">
+                    <input autocomplete="off" type="date" name="date" required />
+                    <label>Travel Date</label>
+                </div>
+
+                <div class="form-group">
+                    <textarea name="preferences" rows="4" required></textarea>
+                    <label>Your Preferences (e.g. budget, group size)</label>
+                </div>
+
+                <button type="submit" class="book-now">Submit Tour Request</button>
+            </form>
+        </section>
+    </main>
+
+    <div id="whatsapp-model">
+        <div id="whatsapp-main">
+            <div id="whatsapp-contact" class="fade-in-on-scroll">
+                <img src="images/image.png" alt="">
+                <div id="whatsapp-content">
+                    <p>
+                        Travelify
+                    </p>
+                    <p>
+                        Nouman Tariq (Owner)
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="whatsapp-icon"><img src="images/image.png" alt=""></div>
+        <div id="up">
+            <img src="svg/up.svg" alt="up">
+        </div>
+    </div>
+
+    <div id="preloader">
+        <div class="folding-cube">
+            <div class="cube">
+                <div class="cube-part"></div>
+            </div>
+            <div class="cube">
+                <div class="cube-part"></div>
+            </div>
+            <div class="cube">
+                <div class="cube-part"></div>
+            </div>
+            <div class="cube">
+                <div class="cube-part"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div id="footer-wrapper">
+            <div id="footer-main">
+                <div>
+                    <img src="images/logo.png" alt="Logo">
+                    <h1 class="main-section-heading">
+                        Travelify
+                    </h1>
+                    <p>
+                        At Travelify, your journey begins with a dream 🌍. We specialize in crafting custom tours across
+                        Pakistan — from serene valleys to iconic landmarks. Let us turn your travel ideas into reality
+                        with care, comfort, and adventure. ✨
+                    </p>
+                </div>
+                <div>
+                    <h2>Our Pages</h2>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="packages.html">Packages</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about-us.html">About us</a></li>
+                        <li><a href="photo-gallery.html">Gallery</a></li>
+                        <li><a href="contact-us.html">Contact us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>Where do you find us</h2>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13595.85045373523!2d74.36276374571696!3d31.580073088697226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39191b000b6090df%3A0x2059b3ccd445b938!2sBrains%20College%20Baghbanpura%20Campus!5e0!3m2!1sen!2s!4v1754074556462!5m2!1sen!2s"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div>
+                    <h2>Contact Us</h2>
+                    <h3>Email: <a href="https://gmail.com">indo@travelify@gmail.com</a></h3>
+                    <h3>Contact: <a href="https://gmail.com">+92 123 456789</a></h3>
+                    <div id="social-icons">
+                        <a href="https://www.instagram.com"><img src="svg/insta.svg" alt="insta"></a>
+                        <a href="https://www.instagram.com"><img src="svg/yt.svg" alt="insta"></a>
+                        <a href="https://www.instagram.com"><img src="svg/fb.svg" alt="insta"></a>
+                        <a href="https://www.instagram.com"><img src="svg/tiktok.svg" alt="insta"></a>
+                    </div>
+                </div>
+            </div>
+            <div id="copyright">
+                <p>Copyright &copy; | All rights are reserved </p>
+                <a href="privacy-policy.html">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+    <!-- </section> -->
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const packageId = params.get("id") || "";
+
+        function formatLocation(slug) {
+            return slug
+                .split('-')                           // Split by hyphen
+                .map(word => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize each word
+                .join(' ');                           // Join with space
+        }
+
+        document.getElementById('destination-title').value = formatLocation(packageId);
+    </script>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

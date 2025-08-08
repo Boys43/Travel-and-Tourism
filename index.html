@@ -57,7 +57,9 @@
     <nav id="navigation">
       <ul id="nav-wrapper">
         <li><a href="index.html">Home</a></li>
-        <li><a href="http://localhost:3000/services.html">Services</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="transport-choices.html">Book a Transport</a></li>
+        <li><a href="http://127.0.0.1:3000/photo-gallery.html">Gallery</a></li>
         <li><a href="contact-us.html">Contact us</a></li>
         <li><a href="about-us.html">About us</a></li>
       </ul>
@@ -140,213 +142,213 @@
     <section id="upcoming-tours">
       <div class="main-overlay"></div>
       <h1 class="main-section-heading fade-in-on-scroll">
-        Upcoming Tours
+        Upcoming Tours <a href="packages.html" class="page-link"> / View All Packages</a>
       </h1>
       <div id="upcoming-tours-wrapper">
         <div class="tour-cards fade-in-on-scroll">
           <div class="offer">
-            <img src="svg/limited.svg" alt="Limited"> Limited Seats
+            <img src="svg/limited.svg" alt="Limited"> Upcoming Tours
           </div>
           <div class="img-frame">
-            <img src="gallery/shangrila.webp" alt="tour" />
+            <img src="gallery/arang-kel.webp" alt="tour" />
           </div>
           <div class="card-content">
             <div>
-              <h2 class="destination">Shagrila</h2>
+              <h2 class="destination">Arang Kel</h2>
               <div>
-                <h2 class="price">Rs24,000</h2>
-                <div class="stay">8 Days (7 nights)</div>
+                <h2 class="price">Rs12,000</h2>
+                <div class="stay">7 Days (6 nights)</div>
               </div>
             </div>
             <div>
-              <button>
-                Book Now
+              <button onclick="goToTrip(this)">
+                Book Tour
               </button>
-              <a href="package.html?id=shangrila">View plan </a>
+              <a href="package-layout.html?id=arang-kel">View plan </a>
             </div>
           </div>
         </div>
         <div class="tour-cards fade-in-on-scroll">
           <div class="offer">
-            <img src="svg/limited.svg" alt="Limited"> Top Offers
-          </div>
-          <div class="img-frame">
-            <img src="gallery/Kalash and chitral.webp" alt="tour" />
-          </div>
-          <div class="card-content">
-            <div>
-              <h2 class="destination">Kalash and chitral</h2>
-              <div>
-                <h2 class="price">Rs22,000</h2>
-                <div class="stay">8 Days (7 nights)</div>
-              </div>
-            </div>
-            <div>
-              <button>
-                Book Now
-              </button>
-              <a href="#">View plan </a>
-            </div>
-          </div>
-        </div>
-        <div class="tour-cards fade-in-on-scroll">
-          <div class="offer">
-            <img src="svg/limited.svg" alt="Limited"> Limited Time
-          </div>
-          <div class="img-frame">
-            <img src="gallery/rakhposhi.jpg" alt="tour" />
-          </div>
-          <div class="card-content">
-            <div>
-              <h2 class="destination">Rakhposhi</h2>
-              <div>
-                <h2 class="price">Rs7,000</h2>
-                <div class="stay">2 Days (1 Night)</div>
-              </div>
-            </div>
-            <div>
-              <button>
-                Book Now
-              </button>
-              <a href="#">View plan </a>
-            </div>
-          </div>
-        </div>
-        <div class="tour-cards fade-in-on-scroll">
-          <div class="offer">
-            <img src="svg/limited.svg" alt="Limited">Top Visited
+            <img src="svg/limited.svg" alt="Limited"> Upcoming
           </div>
           <div class="img-frame">
             <img src="gallery/azad-kashmir.webp" alt="tour" />
           </div>
           <div class="card-content">
             <div>
-              <h2 class="destination">Kashmir</h2>
+              <h2 class="destination">Azad Kashmir</h2>
+              <div>
+                <h2 class="price">Rs22,000</h2>
+                <div class="stay">8 Days (7 nights)</div>
+              </div>
+            </div>
+            <div>
+              <button onclick="goToTrip(this)">
+                Book Tour
+              </button>
+              <a href="package-layout.html?id=azad-kashmir">View plan </a>
+            </div>
+          </div>
+        </div>
+        <div class="tour-cards fade-in-on-scroll">
+          <div class="offer">
+            <img src="svg/limited.svg" alt="Limited"> Popular
+          </div>
+          <div class="img-frame">
+            <img src="gallery/Badshahi mosque.jpg" alt="tour" />
+          </div>
+          <div class="card-content">
+            <div>
+              <h2 class="destination">Badshahi Masijid</h2>
+              <div>
+                <h2 class="price">Rs7,000</h2>
+                <div class="stay">2 Days (1 Night)</div>
+              </div>
+            </div>
+            <div>
+              <button onclick="goToTrip(this)">
+                Book Tour
+              </button>
+              <a href="package-layout.html?id=badshahi-masjid">View plan </a>
+            </div>
+          </div>
+        </div>
+        <div class="tour-cards fade-in-on-scroll">
+          <div class="offer">
+            <img src="svg/limited.svg" alt="Limited">Popular
+          </div>
+          <div class="img-frame">
+            <img src="gallery/banjosa.webp" alt="tour" />
+          </div>
+          <div class="card-content">
+            <div>
+              <h2 class="destination">Banjosa </h2>
               <div>
                 <h2 class="price">Rs 10,000</h2>
                 <div class="stay">7 Days (6 Nights)</div>
               </div>
             </div>
             <div>
-              <button>
-                Book Now
+              <button onclick="goToTrip(this)">
+                Book Tour
               </button>
-              <a href="#">View plan </a>
+              <a href="package-layout.html?id=banjosa">View plan </a>
             </div>
           </div>
         </div>
         <div class="tour-cards fade-in-on-scroll">
           <div class="offer">
-            <img src="svg/limited.svg" alt="Limited">Seats Reserved
+            <img src="svg/limited.svg" alt="Limited">Popular
           </div>
           <div class="img-frame">
-            <img src="gallery/naran.webp" alt="tour" />
+            <img src="gallery/Beauty-of-Skardu.webp" alt="tour" />
           </div>
           <div class="card-content">
             <div>
-              <h2 class="destination">Naran Kaghan</h2>
+              <h2 class="destination">The Beauty of Skardu</h2>
               <div>
                 <h2 class="price">Rs 15,000</h2>
                 <div class="stay">4 Days (3 nights)</div>
               </div>
             </div>
             <div>
-              <button>
-                Book Now
+              <button onclick="goToTrip(this)">
+                Book Tour
               </button>
-              <a href="#">View plan </a>
+              <a href="package-layout.html?id=beauty-of-skardu">View plan </a>
             </div>
           </div>
         </div>
         <div class="tour-cards fade-in-on-scroll">
           <div class="offer">
-            <img src="svg/limited.svg" alt="Limited"> Limited Time
+            <img src="svg/limited.svg" alt="Limited"> Book Now
           </div>
           <div class="img-frame">
-            <img src="gallery/dagri.jpg" alt="tour" />
+            <img src="gallery/chitta-katha-lake.webp" alt="tour" />
           </div>
           <div class="card-content">
             <div>
-              <h2 class="destination"> Dagri </h2>
+              <h2 class="destination">Chitta Khata Lake</h2>
               <div>
                 <h2 class="price">Rs10,000</h2>
                 <div class="stay">1 Day (0 Night)</div>
               </div>
             </div>
             <div>
-              <button>
-                Book Now
+              <button onclick="goToTrip(this)">
+                Book Tour
               </button>
-              <a href="#">View plan </a>
+              <a href="package-layout.html?id=chitta-katha-lake">View plan </a>
             </div>
           </div>
         </div>
         <div class="tour-cards fade-in-on-scroll">
           <div class="offer">
-            <img src="svg/limited.svg" alt="Limited"> Budget Friendly
+            <img src="svg/limited.svg" alt="Limited"> Book Now
           </div>
           <div class="img-frame">
-            <img src="gallery/murree.webp" alt="tour" />
+            <img src="gallery/dagri.jpg" alt="tour" />
           </div>
           <div class="card-content">
             <div>
-              <h2 class="destination">Muree</h2>
+              <h2 class="destination">Dagri</h2>
               <div>
                 <h2 class="price">Rs13,000</h2>
                 <div class="stay">8 Days (7 nights)</div>
               </div>
             </div>
             <div>
-              <button>
-                Book Now
+              <button onclick="goToTrip(this)">
+                Book Tour
               </button>
-              <a href="#">View plan </a>
+              <a href="package-layout.html?id=dagri">View plan </a>
             </div>
           </div>
         </div>
         <div class="tour-cards fade-in-on-scroll">
           <div class="offer">
-            <img src="svg/limited.svg" alt="Limited">Summer Special
+            <img src="svg/limited.svg" alt="Limited">Upcoming
           </div>
           <div class="img-frame">
-            <img src="gallery/saral lake.jpg" alt="tour" />
+            <img src="gallery/fairy-meadows-and-nanga-parbat.webp" alt="tour" />
           </div>
           <div class="card-content">
             <div>
-              <h2 class="destination">Saral Lake</h2>
+              <h2 class="destination">Fairy Medows And Manga Parbat</h2>
               <div>
                 <h2 class="price">Rs 24,000</h2>
                 <div class="stay">8 Days (7 nights)</div>
               </div>
             </div>
             <div>
-              <button>
-                Book Now
+              <button onclick="goToTrip(this)">
+                Book Tour
               </button>
-              <a href="#">View plan </a>
+              <a href="package-layout.html?id=fairy-meadows-and-nanga-parbat">View plan </a>
             </div>
           </div>
         </div>
         <div class="tour-cards fade-in-on-scroll">
           <div class="offer">
-            <img src="svg/limited.svg" alt="Limited">Summer Special
+            <img src="svg/limited.svg" alt="Limited">Popular
           </div>
           <div class="img-frame">
-            <img src="gallery/saral lake.jpg" alt="tour" />
+            <img src="gallery/hunza.webp" alt="tour" />
           </div>
           <div class="card-content">
             <div>
-              <h2 class="destination">Saral Lake</h2>
+              <h2 class="destination">Hunza</h2>
               <div>
-                <h2 class="price">Rs 24,000</h2>
-                <div class="stay">8 Days (7 nights)</div>
+                <h2 class="price">Rs 27,000</h2>
+                <div class="stay">3 Days (2 nights)</div>
               </div>
             </div>
             <div>
-              <button>
-                Book Now
+              <button onclick="goToTrip(this)">
+                Book Tour
               </button>
-              <a href="#">View plan </a>
+              <a href="package-layout.html?id=hunza">View plan </a>
             </div>
           </div>
         </div>
@@ -355,15 +357,15 @@
 
     <!-- Custom Tour -->
     <section id="custom-tour">
-      <div id="custom-tour-wrapper">
+      <div id="custom-tour-wrapper" class="fade-in-on-scroll">
         <h1 class="main-section-heading">
           <img src="svg/personal trip (2).svg" alt="Tour Icon">
           Customize Your Dream Tour
         </h1>
         <!-- Optional additional content like a button or image -->
         <div id="button-div">
-          <button>Start Planning</button>
-          <button>family Tour</button>
+          <button onclick="window.location.href= 'persnol-trip.html'">Start Planning</button>
+          <button onclick="window.location.href= 'persnol-trip.html'">family Tour</button>
         </div>
       </div>
     </section>
@@ -371,11 +373,11 @@
     <!-- Top destination -->
     <section id="top-destiny">
       <div id="top-destiny-wrapper">
-        <div id="top-destiny-content">
+        <div id="top-destiny-content" class="fade-in-on-scroll">
           <h1 class="main-section-heading">Top Destinations</h1>
           <p>A glimpse of moments captured across Pakistan</p>
         </div>
-        <div class="grid-gallery">
+        <div class="grid-gallery fade-in-on-scroll">
           <div class="item img1">
             <h2 class="grid-gallery-title">Northern Valleys</h2>
             <img src="gallery/skardu.webp" alt="Northern Valleys">
@@ -400,7 +402,6 @@
     <!-- About us -->
     <section id="about-us">
       <div id="about-us-wrapper">
-
         <!-- Left Visuals Column -->
         <div id="visual-about-us">
           <img src="images/Background Design Vector Png.png" alt="Decorative Shape" />
@@ -434,21 +435,24 @@
         </div>
 
         <!-- Right Content Column -->
-        <div id="content-about-us">
+        <div id="content-about-us" class="fade-in-on-scroll">
           <h1 class="main-section-heading">
-            Who we are ?
+            Who we are ? <a class="page-link" href="about-us.html"> / Want to know?</a>
           </h1>
           <p>
-            We are a team of creative professionals dedicated to bringing your vision to life.
-            With over a decade of experience, we blend innovation with strategy to deliver
-            exceptional results that exceed expectations.
+            Travelify is a passionate team of explorers, storytellers, and travel planners dedicated to showcasing the
+            breathtaking beauty of Pakistan.
+            With over 10 years of hands-on experience in tourism, we’re committed to delivering journeys filled with
+            joy, comfort, and unforgettable moments.
           </p>
           <h2>
             Our Mission
           </h2>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo, maxime!
+            To become Pakistan’s most trusted travel brand by offering personalized, safe, and exciting adventures,
+            promoting local culture, and connecting people through meaningful travel experiences.
           </p>
+
         </div>
 
       </div>
@@ -459,7 +463,8 @@
       <div id="home-gallery-wrapper">
         <div id="gallery-content">
           <h1 class="main-section-heading fade-in-on-scroll">
-            Explore Our Journey <span id="gallery-link"><a href="/photo-gallery.html">/ View Gallery</a></span>
+            Explore Our Journey <span id="gallery-link"><a class="page-link" href="/photo-gallery.html">/ View
+                Gallery</a></span>
           </h1>
           <p class="fade-in-on-scroll">
             A glimpse of moments captured across Pakistan — from scenic landscapes to unforgettable smiles, experience
@@ -505,7 +510,7 @@
     <section id="news-letter">
       <div id="news-letter-wrapper">
         <div id="news-letter-content">
-          <h1 class="main-section-heading">Subscribe to our <span>News Letter</span></h1>
+          <h1 class="main-section-heading">Subscribe to our News Letter</h1>
         </div>
 
         <div id="news-letter-form">
@@ -542,265 +547,237 @@
       <h1 class="main-section-heading">Our testimonials</h1>
       <div class="testimonials-carousel swiper">
         <div class="swiper-wrapper">
+
           <div class="review swiper-slide fade-in-on-scroll">
-            <img src="gallery/chitta-katha-lake.webp\" alt="p1">
+            <img src="gallery/chitta-katha-lake.webp" alt="p1">
             <div class="review-details">
-              <div class="review-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Recusandae, accusantium? Officiis, eaque odio. Quis, maxime dicta numquam sapiente
-                laboriosam optio natus cupiditate quia ratione fugiat praesentium? Voluptate sunt
-                eius vitae!</div>
+              <div class="review-text">
+                Travelify planned every detail perfectly! From transport to accommodation, everything was smooth and
+                enjoyable. Highly recommended! 🌟
+              </div>
               <div class="reviewer-name">Haider</div>
               <div class="reviewer-place">Lahore</div>
             </div>
           </div>
+
           <div class="review swiper-slide fade-in-on-scroll">
             <img src="gallery/Beauty-of-Skardu.webp" alt="p2">
             <div class="review-details">
-              <div class="review-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Recusandae, accusantium? Officiis, eaque odio. Quis, maxime dicta numquam sapiente
-                laboriosam optio natus cupiditate quia ratione fugiat praesentium? Voluptate sunt
-                eius vitae!</div>
+              <div class="review-text">
+                One of the best trips I’ve ever had! The team was professional, and the locations were absolutely
+                stunning. Thank you, Travelify! 🏔️
+              </div>
               <div class="reviewer-name">Usman</div>
               <div class="reviewer-place">Lahore</div>
             </div>
           </div>
+
           <div class="review swiper-slide fade-in-on-scroll">
             <img src="gallery/banjosa.webp" alt="">
             <div class="review-details">
-              <div class="review-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Recusandae, accusantium? Officiis, eaque odio. Quis, maxime dicta numquam sapiente
-                laboriosam optio natus cupiditate quia ratione fugiat praesentium? Voluptate sunt
-                eius vitae!</div>
+              <div class="review-text">
+                Loved every moment of our journey with Travelify. Comfortable ride, amazing guide, and unforgettable
+                views. 🚌✨
+              </div>
               <div class="reviewer-name">Ali</div>
-              <div class="reviewer-place">Lahore</div>
+              <div class="reviewer-place">Islamabad</div>
             </div>
           </div>
+
           <div class="review swiper-slide fade-in-on-scroll">
             <img src="gallery/hunza.webp" alt="">
             <div class="review-details">
-              <div class="review-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Recusandae, accusantium? Officiis, eaque odio. Quis, maxime dicta numquam sapiente
-                laboriosam optio natus cupiditate quia ratione fugiat praesentium? Voluptate sunt
-                eius vitae!</div>
+              <div class="review-text">
+                Very well organized and budget-friendly. The Hunza trip was a dream come true thanks to Travelify. 💼🏞️
+              </div>
               <div class="reviewer-name">Omar</div>
-              <div class="reviewer-place">Lahore</div>
+              <div class="reviewer-place">Karachi</div>
             </div>
           </div>
+
           <div class="review swiper-slide fade-in-on-scroll">
             <img src="gallery/saif-ul-malook-2.webp" alt="">
             <div class="review-details">
-              <div class="review-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Recusandae, accusantium? Officiis, eaque odio. Quis, maxime dicta numquam sapiente
-                laboriosam optio natus cupiditate quia ratione fugiat praesentium? Voluptate sunt
-                eius vitae!</div>
+              <div class="review-text">
+                A magical experience! The team was supportive and always available. Will definitely book again! 💫
+              </div>
               <div class="reviewer-name">Taha</div>
-              <div class="reviewer-place">Lahore</div>
+              <div class="reviewer-place">Faisalabad</div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- Travel Choices -->
-    <section id="testimonials" class="fade-in-on-scroll">
-      <h1 class="main-section-heading">Our testimonials</h1>
-      <div class="testimonials-carousel swiper">
+
+    <section id="transport-carousel">
+      <h1 class="main-section-heading fade-in-on-scroll">🚖 Transport Choices <a class="page-link"
+          href="transport-choices.html"> / View all Vehicles</a></h1>
+      <div class="swiper transport-swiper fade-in-on-scroll">
         <div class="swiper-wrapper">
-          <div class="swiper-slide tour-cards fade-in-on-scroll">
-            <div class="offer">
-              <img src="svg/limited.svg" alt="Limited"> Limited Seats
-            </div>
-            <div class="img-frame">
-              <img src="gallery/shangrila.webp" alt="tour" />
-            </div>
-            <div class="card-content">
-              <div>
-                <h2 class="destination">Shagrila</h2>
-                <div>
-                  <h2 class="price">Rs24,000</h2>
-                  <div class="stay">8 Days (7 nights)</div>
-                </div>
-              </div>
-              <div>
-                <button>
-                  Book Now
-                </button>
-                <a href="package.html?id=shangrila">View plan </a>
-              </div>
-            </div>
+          <!-- Transport 1 -->
+          <div class="swiper-slide transport-card fade-in-on-scroll">
+            <img src="images/crola.webp" alt="Toyota Corolla" />
+            <h3>Toyota Corolla</h3>
+            <p>Ideal for couples & small families. Fuel-efficient & comfortable.</p>
+            <button class="transport-cta">Book Ride</button>
           </div>
-          <div class="swiper-slide tour-cards fade-in-on-scroll">
-            <div class="offer">
-              <img src="svg/limited.svg" alt="Limited"> Limited Seats
-            </div>
-            <div class="img-frame">
-              <img src="gallery/shangrila.webp" alt="tour" />
-            </div>
-            <div class="card-content">
-              <div>
-                <h2 class="destination">Shagrila</h2>
-                <div>
-                  <h2 class="price">Rs24,000</h2>
-                  <div class="stay">8 Days (7 nights)</div>
-                </div>
-              </div>
-              <div>
-                <button>
-                  Book Now
-                </button>
-                <a href="package.html?id=shangrila">View plan </a>
-              </div>
-            </div>
+
+          <!-- Transport 2 -->
+          <div class="swiper-slide transport-card fade-in-on-scroll">
+            <img src="images/brv.jpg" alt="Honda BR-V" />
+            <h3>Honda BR-V</h3>
+            <p>7-seater with spacious interior – great for family trips.</p>
+            <button class="transport-cta">Book Ride</button>
           </div>
-          <div class="swiper-slide tour-cards fade-in-on-scroll">
-            <div class="offer">
-              <img src="svg/limited.svg" alt="Limited"> Limited Seats
-            </div>
-            <div class="img-frame">
-              <img src="gallery/shangrila.webp" alt="tour" />
-            </div>
-            <div class="card-content">
-              <div>
-                <h2 class="destination">Shagrila</h2>
-                <div>
-                  <h2 class="price">Rs24,000</h2>
-                  <div class="stay">8 Days (7 nights)</div>
-                </div>
-              </div>
-              <div>
-                <button>
-                  Book Now
-                </button>
-                <a href="package.html?id=shangrila">View plan </a>
-              </div>
-            </div>
+
+          <!-- Transport 3 -->
+          <div class="swiper-slide transport-card fade-in-on-scroll">
+            <img src="images/honda city.jpg" alt="Honda City" />
+            <h3>Honda City</h3>
+            <p>Sleek design with smooth ride – ideal for business travel.</p>
+            <button class="transport-cta">Book Ride</button>
           </div>
-          <div class="swiper-slide tour-cards fade-in-on-scroll">
-            <div class="offer">
-              <img src="svg/limited.svg" alt="Limited"> Limited Seats
-            </div>
-            <div class="img-frame">
-              <img src="gallery/shangrila.webp" alt="tour" />
-            </div>
-            <div class="card-content">
-              <div>
-                <h2 class="destination">Shagrila</h2>
-                <div>
-                  <h2 class="price">Rs24,000</h2>
-                  <div class="stay">8 Days (7 nights)</div>
-                </div>
-              </div>
-              <div>
-                <button>
-                  Book Now
-                </button>
-                <a href="package.html?id=shangrila">View plan </a>
-              </div>
-            </div>
+
+          <!-- Transport 4 -->
+          <div class="swiper-slide transport-card fade-in-on-scroll">
+            <img src="images/prado.jpg" alt="Toyota Prado" />
+            <h3>Toyota Prado 4x4</h3>
+            <p>Luxury SUV with off-road capabilities – perfect for Northern tours.</p>
+            <button class="transport-cta">Book Ride</button>
           </div>
-          <div class="swiper-slide tour-cards fade-in-on-scroll">
-            <div class="offer">
-              <img src="svg/limited.svg" alt="Limited"> Limited Seats
-            </div>
-            <div class="img-frame">
-              <img src="gallery/shangrila.webp" alt="tour" />
-            </div>
-            <div class="card-content">
-              <div>
-                <h2 class="destination">Shagrila</h2>
-                <div>
-                  <h2 class="price">Rs24,000</h2>
-                  <div class="stay">8 Days (7 nights)</div>
-                </div>
-              </div>
-              <div>
-                <button>
-                  Book Now
-                </button>
-                <a href="package.html?id=shangrila">View plan </a>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide tour-cards fade-in-on-scroll">
-            <div class="offer">
-              <img src="svg/limited.svg" alt="Limited"> Limited Seats
-            </div>
-            <div class="img-frame">
-              <img src="gallery/shangrila.webp" alt="tour" />
-            </div>
-            <div class="card-content">
-              <div>
-                <h2 class="destination">Shagrila</h2>
-                <div>
-                  <h2 class="price">Rs24,000</h2>
-                  <div class="stay">8 Days (7 nights)</div>
-                </div>
-              </div>
-              <div>
-                <button>
-                  Book Now
-                </button>
-                <a href="package.html?id=shangrila">View plan </a>
-              </div>
-            </div>
+
+          <!-- Testimonial 5 -->
+          <div class="swiper-slide transport-card fade-in-on-scroll">
+            <img src="images/jeep.webp" alt="Jeep" />
+            <h3>Jeep 4 x 4</h3>
+            <p>Best for mountain trips - gives you a jerk free ride</p>
+            <button class="transport-cta">Book Ride</button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-      <div id="footer-wrapper">
-        <div id="footer-main">
-          <div>
-            <img src="images/logo.png" alt="Logo">
-            <h1 class="main-section-heading">
-              Travelify
-            </h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, delectus ex molestiae debitis
-              officia voluptatem iure impedit nemo, eius nisi doloribus tempora! Odit.
-            </p>
+    <section id="faq-section" class="fade-in-on-scroll">
+      <h1 class="main-section-heading">❓ Frequently Asked Questions</h1>
+      <div id="faq-wrapper">
+
+        <div class="faq-card">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>How do I book a tour with Travelify?</span>
+            <span class="toggle-icon">+</span>
           </div>
-          <div>
-            <h2>Our Pages</h2>
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="packages.html">Packages</a></li>
-              <li><a href="services.html">Services</a></li>
-              <li><a href="about-us.html">About us</a></li>
-              <li><a href="photo-gallery.html">Gallery</a></li>
-              <li><a href="contact-us.html">Contact us</a></li>
-            </ul>
-          </div>
-          <div>
-            <h2>Where do you find us</h2>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13595.85045373523!2d74.36276374571696!3d31.580073088697226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39191b000b6090df%3A0x2059b3ccd445b938!2sBrains%20College%20Baghbanpura%20Campus!5e0!3m2!1sen!2s!4v1754074556462!5m2!1sen!2s"
-              width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-          <div>
-            <h2>Contact Us</h2>
-            <h3>Email: <a href="https://gmail.com">indo@travelify@gmail.com</a></h3>
-            <h3>Contact: <a href="https://gmail.com">+92 123 456789</a></h3>
-            <div id="social-icons">
-              <a href="https://www.instagram.com"><img src="svg/insta.svg" alt="insta"></a>
-              <a href="https://www.instagram.com"><img src="svg/yt.svg" alt="insta"></a>
-              <a href="https://www.instagram.com"><img src="svg/fb.svg" alt="insta"></a>
-              <a href="https://www.instagram.com"><img src="svg/tiktok.svg" alt="insta"></a>
-            </div>
+          <div class="faq-answer">
+            You can easily book a tour by clicking the "Book Now" button on any tour card or by visiting our
+            <a href="services.html" class="page-link">Services</a> page.
           </div>
         </div>
-        <div id="copyright">
-          <p>Copyright &copy; | All rights are reserved </p>
-          <a href="privacy-policy.html">Privacy Policy</a>
+
+        <div class="faq-card">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Do you offer customized tour packages?</span>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Yes! Head over to our <a href="persnol-trip.html" class="page-link"> Customize Your Trip </a> section to
+            start
+            planning your dream tour with your preferences.
+          </div>
         </div>
+
+        <div class="faq-card">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Is transport included in the tour packages?</span>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Yes, all our packages come with well-maintained and comfortable transport options tailored for your tour
+            type.
+          </div>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Are the trips safe for families and solo travelers?</span>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Absolutely. Travelify ensures safety and comfort for all types of travelers through our vetted staff and
+            support system.
+          </div>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>What is your refund policy?</span>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Our refund policy depends on the timing of cancellation. Please refer to the
+            <a href="privacy-policy.html" class="page-link">Privacy Policy</a> page for complete details.
+          </div>
+        </div>
+
       </div>
-    </footer>
+    </section>
 
   </main>
 
+  <!-- Footer -->
+  <footer>
+    <div id="footer-wrapper">
+      <div id="footer-main">
+        <div>
+          <img src="images/logo.png" alt="Logo">
+          <h1 class="main-section-heading">
+            Travelify
+          </h1>
+          <p>
+            At Travelify, we're passionate about turning your travel dreams into reality.
+            From serene mountains to vibrant cityscapes, our expertly crafted tours ensure comfort, safety, and
+            unforgettable memories.
+          </p>
+
+        </div>
+        <div>
+          <h2>Our Pages</h2>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about-us.html">About us</a></li>
+            <li><a href="photo-gallery.html">Gallery</a></li>
+            <li><a href="contact-us.html">Contact us</a></li>
+            <li><a href="persnol-trip.html">Persnol Trip</a></li>
+            <li><a href="transport-choices.html">Transport Choices</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Where do you find us</h2>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13595.85045373523!2d74.36276374571696!3d31.580073088697226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39191b000b6090df%3A0x2059b3ccd445b938!2sBrains%20College%20Baghbanpura%20Campus!5e0!3m2!1sen!2s!4v1754074556462!5m2!1sen!2s"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div>
+          <h2>Contact Us</h2>
+          <h3>Email: <a href="https://gmail.com">indo@travelify@gmail.com</a></h3>
+          <h3>Contact: <a href="https://gmail.com">+92 123 456789</a></h3>
+          <div id="social-icons">
+            <a href="https://www.instagram.com"><img src="svg/insta.svg" alt="insta"></a>
+            <a href="https://www.instagram.com"><img src="svg/yt.svg" alt="insta"></a>
+            <a href="https://www.instagram.com"><img src="svg/fb.svg" alt="insta"></a>
+            <a href="https://www.instagram.com"><img src="svg/tiktok.svg" alt="insta"></a>
+          </div>
+        </div>
+      </div>
+      <div id="copyright">
+        <p>Copyright &copy; | All rights are reserved </p>
+        <a href="privacy-policy.html">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
 
   <!-- Modal Popup -->
   <div id="tour-popup" class="popup hidden">
@@ -815,7 +792,7 @@
   <!-- WhatsApp Button -->
   <div id="whatsapp-model">
     <div id="whatsapp-main">
-      <div id="whatsapp-contact" class="fade-in-on-scroll">
+      <div onclick="window.location.href = 'tel:+92123456789'" id="whatsapp-contact" class="fade-in-on-scroll">
         <img src="images/image.png" alt="">
         <div id="whatsapp-content">
           <p>
@@ -873,6 +850,19 @@
 
   <!-- Custom Css for Gsap scroll Trigger -->
   <script src="js/gsap.js"></script>
+
+  <script>
+    function goToTrip(button) {
+      const card = button.closest('.tour-cards'); // or use `.card-content.parentNode` if needed
+      const destination = card.querySelector('.destination');
+
+      if (destination) {
+        const title = destination.textContent.trim().toLowerCase().replace(/\s+/g, '-');
+        const url = `persnol-trip.html?id=${encodeURIComponent(title)}`;
+        window.location.href = url;
+      }
+    }
+  </script>
 
 </body>
 

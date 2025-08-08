@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transport | Travelify</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Adding media queries css styling sheet -->
+  <link rel="stylesheet" href="css/media_queries.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/utility_classes.css" />
+  <!-- Using SwiperCSS -->
+
+  <!-- ✅ Preload Google Fonts -->
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Oswald:wght@400;700&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Oswald:wght@400;700&display=swap" />
+  </noscript>
+
+  <!-- ✅ Preload Reey Regular -->
+  <link rel="preload" as="font" href="https://db.onlinewebfonts.com/t/12ece9d4b11e224fbbd0b5ca246bb213.woff2"
+    type="font/woff2" crossorigin="anonymous" />
+
+  <!-- ✅ Reey Stylesheet -->
+  <link href="https://db.onlinewebfonts.com/c/12ece9d4b11e224fbbd0b5ca246bb213?family=Reey+Regular" rel="stylesheet" />
+</head>
+<style>
+  #hero {
+    background-image: url("images/transport.jpg");
+  }
+
+  #travel-cards {
+    display: flex;
+    width: 100%;
+    margin: 5rem 0;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 0 5rem;
+  }
+
+  .car-card {
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+    border-radius: 1.5rem;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    height: 15rem;
+    width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .car-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  .car-card-image {
+    margin-right: 1rem;
+    flex: 1;
+    background-color: #eaf4fb;
+  }
+
+  .car-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .car-card-details {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .car-card-details h2 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .price-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 1rem;
+    gap: 0.5rem;
+    text-align: right;
+  }
+
+  .price-section .label {
+    color: var(--text-muted);
+  }
+
+  .price-section .persons {
+    color: var(--text-muted);
+  }
+
+  .price-section .price {
+    font-weight: 700;
+    color: var(--text-dark);
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.5rem;
+    /* margin-top: 1.5rem; */
+    /* margin-bottom: 2rem; */
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.7rem;
+    font-weight: 500;
+    border-left: 4px solid transparent;
+    padding-left: 0.75rem;
+  }
+
+  .included {
+    color: #2e7d32;
+    border-color: #2e7d32;
+  }
+
+  .excluded {
+    color: #c62828;
+    border-color: #c62828;
+  }
+
+  .buttons-section {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: auto;
+  }
+
+  @media (max-width: 768px) {
+    .car-card {
+      flex-direction: column;
+    }
+
+    .car-card-details {
+      padding: 1.5rem;
+    }
+
+    .car-card-details h2 {
+      font-size: 1.6rem;
+    }
+
+    .price-section {
+      align-self: flex-start;
+      text-align: left;
+      margin-top: 1rem;
+    }
+
+    .price-section .price {
+      font-size: 1.6rem;
+    }
+
+    .buttons-section {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+  }
+
+  #custom-car {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    gap: 2rem;
+    margin: 3rem 0;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #custom-car p {
+    padding: 0 5rem;
+    color: var(--text-muted);
+    text-align: center;
+  }
+
+  #custom-car button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    height: auto !important;
+    padding: 1rem !important;
+  }
+
+  #custom-car button img {
+    width: 4rem;
+  }
+</style>
+</head>
+
+<body>
+
+  <header>
+    <a href="#">
+      <div id="logo-details">
+        <img src="images/logo.png" alt="Logo" id="logo" />
+        <h2 id="site-name">Travelify</h2>
+      </div>
+    </a>
+
+    <div id="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav id="navigation">
+      <ul id="nav-wrapper">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="transport-choices.html">Book a Transport</a></li>
+        <li><a href="http://127.0.0.1:3000/photo-gallery.html">Gallery</a></li>
+        <li><a href="contact-us.html">Contact us</a></li>
+        <li><a href="about-us.html">About us</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <!-- Hero -->
+    <section id="hero">
+      <div class="main-overlay"></div>
+      <div id="main-content">
+        <h1 id="tagline" class="fade-in-on-scroll">
+          Pick Your<span class="fade-in-on-scroll">Comfortable</span> Ride
+        </h1>
+        <div id="button-div">
+          <button class="book-now">Book Now</button>
+          <button class="tours">Tours</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="travel-cards">
+
+      <!-- Honda BR-V -->
+      <div class="car-card">
+        <div class="car-card-image">
+          <img src="images/brv.jpg" alt="Honda BR-V">
+        </div>
+        <div class="car-card-details">
+          <h2>Honda BR-V</h2>
+          <div class="features-grid">
+            <div class="feature-item included">✔️ 7-Seater SUV</div>
+            <div class="feature-item included">✔️ Air Conditioning</div>
+            <div class="feature-item included">✔️ Luggage Capacity</div>
+            <div class="feature-item included">✔️ Comfortable for Families</div>
+            <div class="feature-item excluded">❌ Fuel Included</div>
+            <div class="feature-item excluded">❌ Highway Toll</div>
+            <div class="feature-item excluded">❌ Driver Meal</div>
+          </div>
+        </div>
+        <div class="price-section">
+          <div class="label">With Driver</div>
+          <div class="persons">5–7 Persons</div>
+          <div class="price">Rs 5500 – 6500</div>
+          <div class="buttons-section">
+            <button class="btn btn-book" onclick="handleBookNow()">Book Now</button>
+            <button class="btn btn-call" onclick="handleCallNow()">Call Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Toyota Land Cruiser -->
+      <div class="car-card">
+        <div class="car-card-image">
+          <img src="images/land.jpg" alt="Toyota Land Cruiser">
+        </div>
+        <div class="car-card-details">
+          <h2>Toyota Land Cruiser</h2>
+          <div class="features-grid">
+            <div class="feature-item included">✔️ Premium SUV</div>
+            <div class="feature-item included">✔️ 4x4 Off-Road Ready</div>
+            <div class="feature-item included">✔️ Leather Interior</div>
+            <div class="feature-item included">✔️ AC/Heater</div>
+            <div class="feature-item excluded">❌ Fuel Charges</div>
+            <div class="feature-item excluded">❌ Driver Tip</div>
+            <div class="feature-item excluded">❌ Tolls</div>
+          </div>
+        </div>
+        <div class="price-section">
+          <div class="label">With Driver</div>
+          <div class="persons">4–5 Persons</div>
+          <div class="price">Rs 11000 – 14000</div>
+          <div class="buttons-section">
+            <button class="btn btn-book" onclick="handleBookNow()">Book Now</button>
+            <button class="btn btn-call" onclick="handleCallNow()">Call Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Honda City -->
+      <div class="car-card">
+        <div class="car-card-image">
+          <img src="images/honda city.jpg" alt="Honda City">
+        </div>
+        <div class="car-card-details">
+          <h2>Honda City</h2>
+          <div class="features-grid">
+            <div class="feature-item included">✔️ Executive Sedan</div>
+            <div class="feature-item included">✔️ Dual AC Zones</div>
+            <div class="feature-item included">✔️ Fuel Efficient</div>
+            <div class="feature-item included">✔️ Power Windows</div>
+            <div class="feature-item excluded">❌ Fuel</div>
+            <div class="feature-item excluded">❌ Driver Meals</div>
+            <div class="feature-item excluded">❌ Toll Tax</div>
+          </div>
+        </div>
+        <div class="price-section">
+          <div class="label">With Driver</div>
+          <div class="persons">3–4 Persons</div>
+          <div class="price">Rs 4000 – 4800</div>
+          <div class="buttons-section">
+            <button class="btn btn-book" onclick="handleBookNow()">Book Now</button>
+            <button class="btn btn-call" onclick="handleCallNow()">Call Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Toyota Corolla -->
+      <div class="car-card">
+        <div class="car-card-image">
+          <img src="images/crola.webp" alt="Toyota Corolla">
+        </div>
+        <div class="car-card-details">
+          <h2>Toyota Corolla</h2>
+          <div class="features-grid">
+            <div class="feature-item included">✔️ AC/Heater</div>
+            <div class="feature-item included">✔️ GPS Navigation</div>
+            <div class="feature-item included">✔️ Smooth Drive</div>
+            <div class="feature-item included">✔️ Clean Interior</div>
+            <div class="feature-item excluded">❌ Fuel</div>
+            <div class="feature-item excluded">❌ Toll Tax</div>
+            <div class="feature-item excluded">❌ Snacks</div>
+          </div>
+        </div>
+        <div class="price-section">
+          <div class="label">With Driver</div>
+          <div class="persons">3–4 Persons</div>
+          <div class="price">Rs 4500 – 5000</div>
+          <div class="buttons-section">
+            <button class="btn btn-book" onclick="handleBookNow()">Book Now</button>
+            <button class="btn btn-call" onclick="handleCallNow()">Call Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Suzuki Jeep -->
+      <div class="car-card">
+        <div class="car-card-image">
+          <img src="images/jeep.webp" alt="Suzuki Jeep">
+        </div>
+        <div class="car-card-details">
+          <h2>Suzuki Jeep</h2>
+          <div class="features-grid">
+            <div class="feature-item included">✔️ Rugged Terrain Use</div>
+            <div class="feature-item included">✔️ Open Roof Optional</div>
+            <div class="feature-item included">✔️ Mountain Trails Ready</div>
+            <div class="feature-item included">✔️ 4x4 Drive</div>
+            <div class="feature-item excluded">❌ Fuel</div>
+            <div class="feature-item excluded">❌ Toll Tax</div>
+            <div class="feature-item excluded">❌ Driver Tip</div>
+          </div>
+        </div>
+        <div class="price-section">
+          <div class="label">With Driver</div>
+          <div class="persons">4–5 Persons</div>
+          <div class="price">Rs 6000 – 7000</div>
+          <div class="buttons-section">
+            <button class="btn btn-book" onclick="handleBookNow()">Book Now</button>
+            <button class="btn btn-call" onclick="handleCallNow()">Call Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Toyota Prado -->
+      <div class="car-card">
+        <div class="car-card-image">
+          <img src="images/prado.jpg" alt="Toyota Prado">
+        </div>
+        <div class="car-card-details">
+          <h2>Toyota Prado</h2>
+          <div class="features-grid">
+            <div class="feature-item included">✔️ Luxury SUV</div>
+            <div class="feature-item included">✔️ Leather Seats</div>
+            <div class="feature-item included">✔️ Dual Climate Control</div>
+            <div class="feature-item included">✔️ Power Drive</div>
+            <div class="feature-item excluded">❌ Fuel</div>
+            <div class="feature-item excluded">❌ Toll Tax</div>
+            <div class="feature-item excluded">❌ Food</div>
+          </div>
+        </div>
+        <div class="price-section">
+          <div class="label">With Driver</div>
+          <div class="persons">4–6 Persons</div>
+          <div class="price">Rs 9000 – 11000</div>
+          <div class="buttons-section">
+            <button class="btn btn-book" onclick="handleBookNow()">Book Now</button>
+            <button class="btn btn-call" onclick="handleCallNow()">Call Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Toyota Coaster -->
+      <div class="car-card">
+        <div class="car-card-image">
+          <img src="images/coaster.jpg" alt="Toyota Coaster">
+        </div>
+        <div class="car-card-details">
+          <h2>Toyota Coaster</h2>
+          <div class="features-grid">
+            <div class="feature-item included">✔️ 22-Seat Minibus</div>
+            <div class="feature-item included">✔️ AC Available</div>
+            <div class="feature-item included">✔️ Group Friendly</div>
+            <div class="feature-item included">✔️ Smooth Suspension</div>
+            <div class="feature-item excluded">❌ Fuel</div>
+            <div class="feature-item excluded">❌ Toll Tax</div>
+            <div class="feature-item excluded">❌ Snacks</div>
+          </div>
+        </div>
+        <div class="price-section">
+          <div class="label">With Driver</div>
+          <div class="persons">15–22 Persons</div>
+          <div class="price">Rs 12000 – 16000</div>
+          <div class="buttons-section">
+            <button class="btn btn-book" onclick="handleBookNow()">Book Now</button>
+            <button class="btn btn-call" onclick="handleCallNow()">Call Now</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="custom-car">
+      <div id="custom-car-content">
+        <h1 class="main-section-heading fade-in-on-scroll">
+          Request the car of your own choice
+        </h1>
+        <p>
+          Didn’t find your preferred vehicle? No worries! Let us know what you need — whether it’s a luxury SUV, a
+          family van, or a premium sedan — and we’ll arrange it just for you.
+        </p>
+      </div>
+      <div id="custom-car-cta" class="fade-in-on-scroll">
+        <button onclick="window.location.href = 'tel: +92 328 6960243'">
+          <img src="images/image.png" alt="whatsapp"> Request on WhatsApp
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="whatsapp-model">
+    <div id="whatsapp-main">
+      <div id="whatsapp-contact" class="fade-in-on-scroll">
+        <img src="images/image.png" alt="">
+        <div id="whatsapp-content">
+          <p>
+            Travelify
+          </p>
+          <p>
+            Nouman Tariq (Owner)
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id="whatsapp-icon"><img src="images/image.png" alt=""></div>
+    <div id="up">
+      <img src="svg/up.svg" alt="up">
+    </div>
+  </div>
+
+  <div id="preloader">
+        <div class="folding-cube">
+            <div class="cube">
+                <div class="cube-part"></div>
+            </div>
+            <div class="cube">
+                <div class="cube-part"></div>
+            </div>
+            <div class="cube">
+                <div class="cube-part"></div>
+            </div>
+            <div class="cube">
+                <div class="cube-part"></div>
+            </div>
+        </div>
+    </div>
+
+  <footer>
+    <div id="footer-wrapper">
+      <div id="footer-main">
+        <div>
+          <img src="images/logo.png" alt="Logo">
+          <h1 class="main-section-heading">
+            Travelify
+          </h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, delectus ex molestiae debitis
+            officia voluptatem iure impedit nemo, eius nisi doloribus tempora! Odit.
+          </p>
+        </div>
+        <div>
+          <h2>Our Pages</h2>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about-us.html">About us</a></li>
+            <li><a href="photo-gallery.html">Gallery</a></li>
+            <li><a href="contact-us.html">Contact us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Where do you find us</h2>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13595.85045373523!2d74.36276374571696!3d31.580073088697226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39191b000b6090df%3A0x2059b3ccd445b938!2sBrains%20College%20Baghbanpura%20Campus!5e0!3m2!1sen!2s!4v1754074556462!5m2!1sen!2s"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div>
+          <h2>Contact Us</h2>
+          <h3>Email: <a href="https://gmail.com">indo@travelify@gmail.com</a></h3>
+          <h3>Contact: <a href="https://gmail.com">+92 123 456789</a></h3>
+          <div id="social-icons">
+            <a href="https://www.instagram.com"><img src="svg/insta.svg" alt="insta"></a>
+            <a href="https://www.instagram.com"><img src="svg/yt.svg" alt="insta"></a>
+            <a href="https://www.instagram.com"><img src="svg/fb.svg" alt="insta"></a>
+            <a href="https://www.instagram.com"><img src="svg/tiktok.svg" alt="insta"></a>
+          </div>
+        </div>
+      </div>
+      <div id="copyright">
+        <p>Copyright &copy; | All rights are reserved </p>
+        <a href="privacy-policy.html">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <script>
+    function handleBookNow() {
+      alert("Booking feature coming soon!");
+    }
+
+    function handleCallNow() {
+      window.location.href = "tel:+923001234567";
+    }
+  </script>
+
+  <script src="js/script.js "></script>
+</body>
+
+</html>

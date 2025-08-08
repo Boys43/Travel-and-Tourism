@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Skardu Tour Package | Travelify</title>
+  <title>Travelify</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/utility_classes.css">
   <link rel="stylesheet" href="css/media_queries.css">
@@ -41,15 +41,22 @@
       text-shadow: 0.1rem 0.1rem 0.5rem var(--primary-color);
       position: absolute;
       bottom: 5%;
-      /* white-space: nowrap; */
       width: 100%;
       text-align: center;
-      /* left: 50%; */
-      /* transform: translateX(-50%); */
     }
 
     #main-content {
       padding: 0 !important;
+    }
+
+    .package-container {
+      display: flex;
+      gap: 2rem;
+      flex-direction: column;
+    }
+
+    .package-container button {
+      align-self: center;
     }
 
     .package-highlight {
@@ -132,7 +139,7 @@
 
 <body>
   <header>
-    <a href="#">
+    <a href="index.html">
       <div id="logo-details">
         <img src="images/logo.png" alt="Logo" id="logo" />
         <h2 id="site-name">Travelify</h2>
@@ -149,6 +156,8 @@
       <ul id="nav-wrapper">
         <li><a href="index.html">Home</a></li>
         <li><a href="services.html">Services</a></li>
+        <li><a href="transport-choices.html">Book a Transport</a></li>
+        <li><a href="http://127.0.0.1:3000/photo-gallery.html">Gallery</a></li>
         <li><a href="contact-us.html">Contact us</a></li>
         <li><a href="about-us.html">About us</a></li>
       </ul>
@@ -190,6 +199,8 @@
       </div>
     </div>
 
+    <button onclick="goToTrip()">Book Tour</button>
+
     <div class="section-block fade-in-on-scroll">
       <h2>Description</h2>
       <p id="Description">
@@ -206,6 +217,26 @@
       <h1>Location on Google Maps</h1>
       <iframe class="popup-map" src="" loading="lazy" allowfullscreen
         referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+
+  <div id="whatsapp-model">
+    <div id="whatsapp-main">
+      <div id="whatsapp-contact" class="fade-in-on-scroll">
+        <img src="images/image.png" alt="">
+        <div id="whatsapp-content">
+          <p>
+            Travelify
+          </p>
+          <p>
+            Nouman Tariq (Owner)
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id="whatsapp-icon"><img src="images/image.png" alt=""></div>
+    <div id="up">
+      <img src="svg/up.svg" alt="up">
     </div>
   </div>
 
@@ -243,8 +274,8 @@
         </div>
         <div>
           <h2>Contact Us</h2>
-          <h3>Email: <a href="https://gmail.com">indo@travelify@gmail.com</a></h3>
-          <h3>Contact: <a href="https://gmail.com">+92 123 456789</a></h3>
+          <h3>Email: <a href="mailto:nt50616849@gmail.com">info@travelify</a></h3>
+          <h3>Contact: <a href="tel:+92123456789">+92 123 456789</a></h3>
           <div id="social-icons">
             <a href="https://www.instagram.com"><img src="svg/insta.svg" alt="insta"></a>
             <a href="https://www.instagram.com"><img src="svg/yt.svg" alt="insta"></a>
@@ -260,7 +291,7 @@
     </div>
   </footer>
 
-    <div id="preloader">
+  <div id="preloader">
     <div class="folding-cube">
       <div class="cube">
         <div class="cube-part"></div>
@@ -276,6 +307,8 @@
       </div>
     </div>
   </div>
+
+
 
   <script src="js/packages.js"></script>
   <script>
@@ -307,6 +340,19 @@
       mapFrame.src = `https://maps.google.com/maps?q=${mapQuery}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
     } else {
       document.getElementById("package-title").textContent = "Package Not Found";
+    }
+
+    // Book Funtinallity
+
+    function goToTrip() {
+      // const card = document.getElementById('.package-container'); // or use `.card-content.parentNode` if needed
+      const destination = document.querySelector('#package-title');
+
+      if (destination) {
+        const title = destination.textContent.trim().toLowerCase().replace(/\s+/g, '-');
+        const url = `persnol-trip.html?id=${encodeURIComponent(title)}`;
+        window.location.href = url;
+      }
     }
   </script>
 

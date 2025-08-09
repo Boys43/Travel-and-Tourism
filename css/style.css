@@ -530,7 +530,7 @@ a #logo-details > #site-name {
 #upcoming-tours {
   position: relative;
   width: 100%;
-  background-image: url("images/tours-bg.jpg");
+  background-image: url("../images/tours-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: auto;
